@@ -1,0 +1,22 @@
+name: Block PRs to main from non-owners
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  close-unauthorized-pr:
+    if: github.actor != 'd-yv'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close PR and leave comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "PR в main дозволено тільки адмінам."
+          gh pr close "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --comment "❌ PR в гілку 'main' заборонено!."
