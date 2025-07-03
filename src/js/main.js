@@ -1,3 +1,4 @@
+import './header.js';
 import './hero.js';
 import './books.js';
 
