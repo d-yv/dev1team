@@ -158,7 +158,56 @@
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
+  .footer{
+    padding: 80px 64px;
+    gap: 60px;
+  }
+  .footer__nav-list{
+    flex-direction: row;
+    padding-top: 0;
+    gap: 40px;
+    margin-top: 32px;
+  }
+  .footer__form-wrapper {
+    max-width: 400px;
+    padding: 0;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 32px;
+    margin-bottom: 80px;
+  }
+  .footer__form-title{
+    align-self: flex-start;
+    text-align: left;
+  }
+  .footer__required-field-text{
+    align-self: flex-start;
+    text-align: left;
+  }
+  .footer__divider {
+    max-width: 640px; 
+    margin: 0 auto;
+  }
+
+.footer__copyright {
+  padding-top: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px 120px;
+    gap: 80px;
+    align-items: center;
+  }
+  .footer_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 120px; 
+  }
 }
