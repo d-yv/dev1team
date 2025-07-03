@@ -196,18 +196,27 @@
 
 @media screen and (min-width: 1440px) {
   .footer {
-    padding: 80px 120px;
-    gap: 80px;
-    align-items: center;
+    width: 1440px;
+    padding: 80px 64px;
   }
-  .footer_container {
+  .footer_container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 120px; 
+    padding-bottom: 80px;
+  }
+  .nav-container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer__form-wrapper{
+    margin: 0;
+  }
+  .footer__nav-list{
+    margin: 0;
+  }
+  .footer__divider {
+    max-width: 1312px;
   }
 }
