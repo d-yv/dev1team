@@ -94,8 +94,8 @@
 .footer__input:focus {
   color: #0B0500;
   border-radius: 4px;
-  border: 1px solid rgba(11, 5, 0, 0.15));
-  background:rgba(11, 5, 0, 0.05));
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  background:rgba(11, 5, 0, 0.05);
 }
 
 .footer__input:invalid:not(:placeholder-shown) {
@@ -105,7 +105,7 @@
     color: #AD0000;
 }
 .footer__required-field-text {
-  color: #0B0500);
+  color: #0B0500;
   font-size: 12px;
   font-weight: 400;
 }
