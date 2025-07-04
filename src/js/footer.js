@@ -3,7 +3,7 @@ const formData = {
 
 const STORAGE_KEY = "feedback-form-state";
 
-const form = document.querySelector('.footer_form');
+const form = document.querySelector('.footer-form');
 const emailInput = form.elements.email; 
 
 form.addEventListener('input', (event) => {
