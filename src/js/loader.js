@@ -8,3 +8,5 @@ export function hideLoader() {
 
 //імпортуємо функкції в свій js-файл (import {showLoader, hideLoader} from './loader';),
 // додааємо <span class="loader"></span> в свій html-файл, туди, де лоадер повинен бути.
+// Показати: showLoader();
+// Сховати: hideLoader();
