@@ -1,0 +1,140 @@
+.feedbacks {
+    padding: 64px 16px;
+    text-align: start;
+}
+
+.feedbacks-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #0b0500;
+    padding-bottom: 24px;
+}
+
+.fedbacks-about {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #0b0500;
+    padding-bottom: 80px;
+}
+
+
+.swiper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+.swiper-wrapper {
+    display: flex;
+
+}
+
+.swiper-slide {
+    border: 1px solid rgba(11, 5, 0, 0.15);
+    border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 32px 32px 32px 32px;
+}
+
+.feedback-card {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 24px;
+    padding-bottom: 70px;
+
+}
+
+.feedback-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #0b0500;
+
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.feedback-from {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #0b0500;
+}
+
+.feedbacks-arrow {
+    fill: #fff;
+}
+
+.feedback-btn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 32px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    border: 1px solid rgba(11, 5, 0, 0.15);
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    background: #e15d05;
+
+}
+
+.swiper-button-next[disabled],
+.swiper-button-prev[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    background: #5a2502;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    background: #fceee6;
+    outline: none;
+}
+
+
+
+.swiper-button-next:disabled .feedbacks-arrow,
+.swiper-button-prev:disabled .feedbacks-arrow {
+    fill: #0b0500;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .feedback-card {
+        padding-bottom: 0;
+    }
+
+    .feedback-text {
+        width: 277px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .feedback-text {
+        width: 357px;
+    }
+}
