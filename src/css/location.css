@@ -26,7 +26,6 @@
   font-size: 18px;
   line-height: 1.5;
   color: #0b0500;
-  padding-bottom: 32px;
 }
 .location-text-group {
   display: flex;
@@ -40,7 +39,6 @@
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  padding-bottom: 24px;
 }
 .location-item-text {
   font-weight: 400;
@@ -49,6 +47,7 @@
   letter-spacing: -0.01em;
   color: #0b0500;
   margin: 0;
+  font-style: normal;
 }
 .location-link {
   font-weight: 400;
@@ -58,12 +57,17 @@
   text-decoration-skip-ink: none;
   color: #0b0500;
   cursor: pointer;
+  font-style: normal;
+}
+.location-link:hover {
+ color: #0b0500;
 }
 .location-item-address {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #0b0500;
+  font-style: normal;
 }
 .location-map {
   width: 100%;
@@ -83,7 +87,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    gap: 80px;
+    gap: 32px;
     padding: 64px 32px;
   }
   .location-hero-div {
@@ -148,4 +152,12 @@
   .location-map {
     height: 738px;
   }
+  .location-hero-div {
+  gap: 80px;
+}
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 }
