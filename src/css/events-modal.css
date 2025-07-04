@@ -1,0 +1,67 @@
+
+/* modal.css  |  Generic modal styles */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-backdrop.is-hidden { display: none; }
+
+.modal {
+  background: #fffaf7;
+  width: 90%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 12px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  text-align: center;
+}
+.modal-event-name {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.modal-field {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.modal-field input,
+.modal-field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+}
+.modal-submit {
+  width: 100%;
+  background: #f35c1c;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity .25s ease;
+}
+.modal-submit:hover { opacity: .9; }
