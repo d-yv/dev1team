@@ -1,0 +1,8 @@
+* [33m2f61569[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Here’s a draft implementation of the events section
+*   [33me7dfd9d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #30 from d-yv/show-message-function
+[32m|[m[33m\[m  
+[32m|[m * [33m088865a[m add show-message.js
+[32m|[m[32m/[m  
+*   [33m2c868f5[m Merge pull request #29 from d-yv/books
+[34m|[m[35m\[m  
+[34m|[m * [33m8b2655d[m books: 1 relise
