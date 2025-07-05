@@ -76,6 +76,11 @@
   align-items: center;
 }
 
+.books-category-item,
+option {
+  cursor: pointer;
+}
+
 .book-card-content {
   margin: 16px 0;
 }
@@ -178,4 +183,79 @@
   .books-list .books-item {
     width: calc((100% - 3 * 24px) / 4);
   }
+}
+
+/* BOOKS MODAL */
+.book-modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  /* padding: 64px 16px; */
+  padding: 0px 16px;
+  width: 343px;
+  background-color: #fefefe;
+  margin: 15% auto;
+}
+
+.close-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-book-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.quantity-button {
+  width: 30px;
+  height: 30px;
+}
+
+.book-add-to-card,
+.book-buy-now {
+  border-radius: 4px;
+  padding: 12px 24px;
+  width: 311px;
+  height: 48px;
+}
+
+.book-add-to-card {
+  border: 1px solid #e15d05;
+  background: #e15d05;
+  margin-bottom: 24px;
+}
+
+.book-buy-now {
+  border: 1px solid #0b0500;
+  margin-bottom: 32px;
 }
