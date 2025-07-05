@@ -1,0 +1,111 @@
+
+.custom-select-wrapper {
+    position: relative;
+    width: 335px;
+    user-select: none;
+    display: none;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border: 1.5px solid rgba(18, 18, 18, 0.15); 
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: 0.03em;
+    color: #121212; 
+    transition: all 0.2s ease;
+}
+
+.custom-select-trigger:hover {
+    border-color: rgba(18, 18, 18, 0.3);
+}
+
+.custom-select-trigger .arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #121212;
+    transition: transform 0.2s ease;
+}
+
+.custom-select-trigger.open .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background-color: #EFEFEF;
+    border: 1.5px solid #EFEFEF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 256px;
+    overflow-y: auto;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.custom-options.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-option {
+    padding: 14px 24px;
+    color: #121212; 
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: 0.03em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-option:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.custom-option:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.custom-option:hover,
+.custom-option.selected {
+    background-color: #DCDCDC; 
+    color: #121212; 
+}
+.custom-options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-options::-webkit-scrollbar-track {
+    background: #EFEFEF;
+    border-radius: 10px;
+}
+
+.custom-options::-webkit-scrollbar-thumb {
+    background: #FF6B08;
+    border-radius: 10px;
+}
+
+.custom-options::-webkit-scrollbar-thumb:hover {
+    background: #E05A00;
+}
+.custom-options {
+    scrollbar-width: thin;
+    scrollbar-color: #FF6B08 #EFEFEF; 
+}
