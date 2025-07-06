@@ -28,7 +28,7 @@ async function fetchCategories() {
     }
 }
 
-// Получаем и выводим категории
+// Выводим категории
 fetchCategories()
     .then(data => {
         displayCategories(data);
@@ -136,8 +136,8 @@ async function fetchBooksByCategory(categoryName) {
 }
 
 // Выводим ВСЕ книги
-function displayBooks(books) {
-    //console.log('books:', books);
+/*function displayBooks(books) {
+    console.log('books:', books);
     booksList.innerHTML = ''; // Очищаем предыдущие книги
     if (books && Array.isArray(data)) {
         books.forEach(book => {
@@ -145,7 +145,7 @@ function displayBooks(books) {
             booksList.insertAdjacentHTML('beforeend', createBookItem(book.books));
         });
     }
-};
+};*/
 
 // Выводим книги КАТЕГОРИИ
 function displayBooksCategory(books) {
@@ -160,9 +160,9 @@ function displayBooksCategory(books) {
 };
 
 // Отрисовка ВСЕХ книг
-function createBookItem(arr) {
-    //console.log('arrAll: ', arr);
-    return arr.map(book => `
+function createBookItem(books) {
+    //console.log('arrAll: ', books);
+    return books.map(book => `
         <li class="books-item" data-id="${book._id}">
             <img src="${book.book_image}" alt="${book.title}" />
             <div class="book-card-content">
@@ -170,7 +170,7 @@ function createBookItem(arr) {
                 <h3>${book.title}</h3>
                 <p>${book.author}</p>
                 </div>
-                <div class="book-card-price">$${book.price}</div>
+                <div class="book-card-price">$${parseInt(book.price, 10)}</div>
             </div>
             <button class="book-learn-more" data-id="${book._id}">Learn more</button>
         </li>
@@ -219,7 +219,7 @@ categorySelect.addEventListener('change', async (event) => {
 async function fetchBooks() {
     try {
         const { data } = await axios.get('/books/top-books');
-        //console.log('data: ', data);
+        console.log('data: ', data);
         return data;
     } catch (error) {
         console.error('Error fetching top-books:', error.message);
@@ -242,14 +242,20 @@ async function fetchBooks() {
 // fetchBooks();
 
 
-// Инициализация - получение книг
+// Инициализация - получение книг и вывод
 async function initializeBooks() {
     //const books = await fetchBooksByCategory('All categories');
     const data = await fetchBooks();
+//     console.log('allData: ', data);
+//     const limitedBooks = data.slice(0, 24);
+//      const limitedBooksCategory = data.slice(0, 24);
+//      const limitedBooksMobile = data.slice(0, 10);
+//     const limitedBooksCategoryMobile = data.slice(0, 10);
+//     console.log('limit', limitedBooks);
     booksList.innerHTML = ''; // Очищаем предыдущие книги
     // if (data && Array.isArray(data)) {
-        data.forEach(book => {
-            booksList.insertAdjacentHTML('beforeend', createBookItem(book.books));
+       data.forEach(book => {
+           booksList.insertAdjacentHTML('beforeend', createBookItem(book.books));
         });
     // }
 }
