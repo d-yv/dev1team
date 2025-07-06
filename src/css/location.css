@@ -26,6 +26,7 @@
   font-size: 18px;
   line-height: 1.5;
   color: #0b0500;
+  padding-bottom: 32px;
 }
 .location-text-group {
   display: flex;
@@ -123,6 +124,9 @@
   }
   .location-map {
      height: 395px;
+  }
+  .location-hero-text {
+    padding-bottom: 0;
   }
 }
 
