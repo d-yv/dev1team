@@ -1,0 +1,20 @@
+.scroll-up {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.scroll-up.show {
+    display: block;
+}

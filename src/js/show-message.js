@@ -1,13 +1,13 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-export function showMessage(message) {
+export function showMessage(color, message) {
   const messageData = {
     title: message,
-    titleColor: 'red',
+    titleColor: color,
     position: 'bottomRight',
   };
   return iziToast.show(messageData);
 }
 // імпортуємо: import { showMessage } from './show-message';
-// використовуємо: showMessage('Повідомлення')
+// використовуємо: showMessage('колір повідомлення(red або green)', 'Повідомлення')
