@@ -1,7 +1,7 @@
 .hero {
   width: 100%;
   position: relative;
-  margin-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 .hero-slider {
@@ -148,3 +148,5 @@
   .hero-content .btn { width: 227px; height: 40px; font-size: 16px; line-height: 40px; }
   .hero-title { width: 1168px; font-size: 52px; }
 }
+
+
