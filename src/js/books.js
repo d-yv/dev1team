@@ -1,3 +1,4 @@
+import "./book-modal.js";
 import axios from 'axios';
 import { initializeCustomSelect, createCustomOptionsHtml, updateCustomSelectSelection } from './custom-select.js';
 // import "./custom-select.js";
