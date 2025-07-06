@@ -1,3 +1,4 @@
+/* #region categories */
 .books-categories-block {
   margin-bottom: 24px;
 }
@@ -18,54 +19,75 @@
   margin-bottom: 24px;
 }
 
-/* select > option {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 10px;
-
-  border-radius: 4px;
-  padding: 8px 12px;
-  width: 342px;
-  height: 37px;
-
-  background: rgba(11, 5, 0, 0.05);
-} */
-
 .books-category {
   display: none;
 }
 
-.book-card {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
+.books-category-item {
+  cursor: pointer;
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .books-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .books-category-select {
+    display: none;
+  }
+
+  .books-category {
+    display: block;
+    width: 100%;
+  }
+
+  .books-categories {
+    width: 308px;
+    margin-right: 24px;
+
+    /* max-height: 430px; */
+    overflow: auto;
+  }
+
+  .books-category li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+    max-width: 100%;
+  }
+}
+
+/* #endregion categories */
+
+/* #region card */
+
+.books-box-cards {
+  width: 100%;
 }
 
 .books-list {
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 40px;
-  /* row-gap: 0px;
-  column-gap: 40px; */
-
-  /* width: 343px; */
-  min-width: 221px;
-
   margin: 0;
   padding: 0;
 }
 
-.books-list .books-item {
-  width: 100%;
+.books-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.books-list img {
-  width: 100%;
+.books-item img {
+  border-radius: 8px;
+  width: 343px;
+  height: 487px;
 }
 
 .books-category-title,
@@ -73,16 +95,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-}
-
-.books-category-item,
-option {
-  cursor: pointer;
-}
-
-.book-card-content {
   margin: 16px 0;
+  width: 100%;
+}
+
+.book-card-heading {
+  width: 171px;
+  height: 45px;
 }
 
 .book-card-heading h3 {
@@ -90,6 +109,10 @@ option {
   font-size: 16px;
   text-transform: capitalize;
   color: #0b0500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+  max-width: 100%;
 }
 
 .book-card-heading p {
@@ -114,6 +137,37 @@ option {
 .book-learn-more:hover,
 .book-learn-more:focus {
   background-color: #e15d05;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .books-list {
+    gap: 24px;
+  }
+  .books-list .books-item {
+    width: calc((100% - 24px) / 2);
+  }
+  .books-item img {
+    width: 340px;
+    height: 483px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .books-list .books-item {
+    width: calc((100% - 3 * 24px) / 4);
+  }
+  .books-item img {
+    /* width: 227px; */
+    width: 100%;
+    height: 322px;
+  }
+}
+
+/* #endregion card */
+.books-button-load-more {
+  text-align: center;
 }
 
 .books-load-more {
@@ -144,44 +198,6 @@ option {
   }
   .books-category-title p {
     margin-left: 40px;
-  }
-
-  .books-list {
-    gap: 24px;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; */
-    /* row-gap: 24px;
-    column-gap: 40px; */
-    /*padding: 0;
-    list-style: none; */
-    /* width: calc((100% - 24px) / 2); */
-  }
-  .books-list .books-item {
-    width: calc((100% - 24px) / 2);
-  }
-}
-
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1440px) {
-  .books-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .books-category-select {
-    display: none;
-  }
-
-  .books-category {
-    display: block;
-    width: 308px;
-  }
-
-  .books-list .books-item {
-    width: calc((100% - 3 * 24px) / 4);
   }
 }
 
