@@ -1,5 +1,4 @@
 import Swiper from 'swiper/bundle';
-
 import 'swiper/css/bundle';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,11 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  prevBtn.addEventListener('click', () => swiper.slidePrev());
-  nextBtn.addEventListener('click', () => swiper.slideNext());
+  // Универсальная функция для клика с авто-blur
+  function setupButtonWithAutoBlur(button, callback) {
+    if (!button) return;
+    button.addEventListener('click', (e) => {
+      callback(e);      // вызываем действие (например, slideNext)
+      button.blur();    // снимаем фокус после клика
+    });
+  }
+
+  setupButtonWithAutoBlur(prevBtn, () => swiper.slidePrev());
+  setupButtonWithAutoBlur(nextBtn, () => swiper.slideNext());
 
   function updateNavButtons(swiperInstance) {
     prevBtn.disabled = swiperInstance.isBeginning;
     nextBtn.disabled = swiperInstance.isEnd;
+
+    prevBtn.classList.remove('active');
+    nextBtn.classList.remove('active');
+
+    if (swiperInstance.isBeginning) {
+      prevBtn.classList.add('active');
+    } else if (swiperInstance.isEnd) {
+      nextBtn.classList.add('active');
+    }
   }
 });
