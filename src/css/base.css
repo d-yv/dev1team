@@ -1,5 +1,5 @@
 :root {
-  --font-color : 0b0500;
+  --font-color: 0b0500;
 }
 
 html {
@@ -26,4 +26,10 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    background: #FCEEE6;
+  }
 }
