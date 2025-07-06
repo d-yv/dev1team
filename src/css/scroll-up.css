@@ -1,7 +1,7 @@
 .scroll-up {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 5px;
+    right: 5px;
     display: none;
 
     background: #e15d05;
@@ -22,4 +22,18 @@
 .scroll-up-icon {
     fill: #fff;
     align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .scroll-up {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .scroll-up {
+        bottom: 40px;
+        right: 40px;
+    }
 }
