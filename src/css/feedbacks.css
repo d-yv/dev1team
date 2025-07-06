@@ -12,7 +12,7 @@
     padding-bottom: 24px;
 }
 
-.fedbacks-about {
+.feedbacks-about {
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
@@ -20,54 +20,49 @@
     padding-bottom: 80px;
 }
 
-
-.swiper {
+.feedbacks-swiper {
     position: relative;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-
 }
 
-.swiper-wrapper {
+.feedbacks-wrapper {
     display: flex;
-
 }
 
-.swiper-slide {
+.feedbacks-slide {
     border: 1px solid rgba(11, 5, 0, 0.15);
     border-radius: 16px;
     width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
-    padding: 32px 32px 32px 32px;
+    padding: 32px;
 }
 
-.feedback-card {
-
+.feedbacks-card {
     display: flex;
     align-items: flex-start;
     gap: 16px;
     padding-top: 24px;
     padding-bottom: 70px;
-
 }
 
-.feedback-text {
+.feedbacks-text {
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
     color: #0b0500;
-
 }
 
-h4 {
+.feedbacks-profile-info h4 {
     font-weight: 600;
     font-size: 14px;
     color: #333;
+    margin: 0;
 }
 
-.feedback-from {
+.feedbacks-from {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -78,63 +73,70 @@ h4 {
     fill: #fff;
 }
 
-.feedback-btn {
+.feedbacks-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
     padding-top: 32px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.feedbacks-button-next,
+.feedbacks-button-prev {
     border: 1px solid rgba(11, 5, 0, 0.15);
     padding: 12px;
     width: 48px;
     height: 48px;
     background: #e15d05;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.swiper-button-next[disabled],
-.swiper-button-prev[disabled] {
+.feedbacks-button-next[disabled],
+.feedbacks-button-prev[disabled] {
     opacity: 0.3;
     pointer-events: none;
 }
 
-.swiper-button-next:active,
-.swiper-button-prev:active {
+.feedbacks-button-next:active,
+.feedbacks-button-prev:active {
     background: #5a2502;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover,
-.swiper-button-next:focus,
-.swiper-button-prev:focus {
+.feedbacks-button-next:hover,
+.feedbacks-button-prev:hover,
+.feedbacks-button-next:focus,
+.feedbacks-button-prev:focus {
     background: #fceee6;
     outline: none;
 }
 
-
-
-.swiper-button-next:disabled .feedbacks-arrow,
-.swiper-button-prev:disabled .feedbacks-arrow {
+.feedbacks-button-next:disabled .feedbacks-arrow,
+.feedbacks-button-prev:disabled .feedbacks-arrow {
     fill: #0b0500;
 }
 
-
-
 @media only screen and (min-width: 768px) {
-    .feedback-card {
+
+    .feedbacks {
+        padding: 64px 32px;
+    }
+
+    .feedbacks-card {
         padding-bottom: 0;
     }
 
-    .feedback-text {
+    .feedbacks-text {
         width: 277px;
     }
 }
 
 @media only screen and (min-width: 1440px) {
-    .feedback-text {
+    .feedbacks {
+        padding: 64px 64px;
+    }
+
+    .feedbacks-text {
         width: 357px;
     }
 }
