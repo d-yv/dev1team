@@ -18,7 +18,7 @@
     <script type="module" crossorigin src="/project-dev1team/index.js"></script>
     <link rel="modulepreload" crossorigin href="/project-dev1team/assets/vendor-BtOhln4N.js">
     <link rel="stylesheet" crossorigin href="/project-dev1team/assets/vendor-CCbQpm7a.css">
-    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-C2aX_-bF.css">
+    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-DkI7GtJa.css">
   </head>
   <body>
     <header class="header container">
@@ -619,7 +619,32 @@
   </div>
 </footer>
 
-    <div class="modal-window">modal</div>
+    <!-- events-modal.html (partial) -->
+<div class="events-modal-backdrop events-modal--hidden hidden" id="events-modal-backdrop">
+  <div class="events-modal">
+    <button class="events-modal-close" id="events-modal-close" aria-label="Close modal">&times;</button>
+    <h2 class="events-modal-title">Register</h2>
+    <p class="events-modal-event-name" id="events-modal-event-name"></p>
+
+    <form class="events-modal-form" id="events-modal-form">
+      <label class="events-modal-field">
+        Name*
+        <input type="text" name="name" required />
+      </label>
+      <label class="events-modal-field">
+        Email*
+        <input type="email" name="email" required />
+      </label>
+      <label class="events-modal-field">
+        Message
+        <textarea name="message" rows="4"></textarea>
+      </label>
+
+      <button type="submit" class="events-modal-submit">Register</button>
+    </form>
+  </div>
+</div>
+    <button class="scroll-up" aria-label="Scroll up">to up</button>
 
 
   </body>
