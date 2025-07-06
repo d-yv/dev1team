@@ -26,11 +26,17 @@
   font-size: 18px;
   line-height: 1.5;
   color: #0b0500;
+  padding-bottom: 32px;
 }
 .location-text-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 .location-svg {
   fill: #0b0500;
@@ -119,6 +125,11 @@
   .location-map {
      height: 395px;
   }
+  .location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 }
 
 @media screen and (min-width: 1440px) {
