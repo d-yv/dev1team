@@ -1,4 +1,5 @@
 import Swiper from 'swiper/bundle';
+
 import 'swiper/css/bundle';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -6,32 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.custom-next');
 
   const swiper = new Swiper('.hero-swiper', {
-    slidesPerView: 1, // ❗ Один слайд на экране
     loop: false,
     speed: 600,
+    slidesPerView: 1,
     navigation: false,
-    spaceBetween: 0,
-    allowTouchMove: true,
-    observer: true,
-    observeParents: true,
-    resizeObserver: true, // 🔑 если контейнер меняется по размеру
     on: {
-      init(swiperInstance) {
-        updateNavButtons(swiperInstance);
-      },
-      slideChange(swiperInstance) {
-        updateNavButtons(swiperInstance);
-      },
+      init: updateNavButtons,
+      slideChange: updateNavButtons,
     },
   });
 
-  prevBtn.addEventListener('click', () => {
-    if (!prevBtn.disabled) swiper.slidePrev();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (!nextBtn.disabled) swiper.slideNext();
-  });
+  prevBtn.addEventListener('click', () => swiper.slidePrev());
+  nextBtn.addEventListener('click', () => swiper.slideNext());
 
   function updateNavButtons(swiperInstance) {
     prevBtn.disabled = swiperInstance.isBeginning;

@@ -1,22 +1,27 @@
-
-
 .hero {
   width: 100%;
   position: relative;
+  margin-bottom: 32px;
 }
+
 .hero-slider {
   position: relative;
 }
-.hero-heading {
-  display: none;
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
-.hero-slide-bg {
+
+.slide-wrapper {
+  position: relative;
   width: 100%;
-  height: 199px;
-  object-fit: cover;
-  /* border-radius: 8px;
-  display: block; */
+  height: 100%;
 }
+
+
+
 .hero-content {
   position: absolute;
   left: 16px;
@@ -26,13 +31,20 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  z-index: 2;
 }
+
+.hero-heading {
+  display: none;
+}
+
 .hero-content h2 {
   width: 228px;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
 }
+
 .hero-content .btn {
   width: 117px;
   height: 20px;
@@ -46,12 +58,14 @@
   border: none;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
+
 .hero-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 24px;
 }
+
 .hero-title {
   width: 343px;
   font-size: 40px;
@@ -59,12 +73,14 @@
   color: #0b0500;
   line-height: 1.2;
 }
-.hero-swiper-buttons {
+
+.swiper-buttons {
   display: flex;
   gap: 12px;
 }
-.hero-swiper-buttons button {
-  background-color: #e15d05;
+
+.swiper-buttons button {
+  background-color: #e15d05;;
   width: 48px;
   height: 48px;
   display: flex;
@@ -73,39 +89,62 @@
   border: none;
   transition: background-color 0.3s;
 }
-.hero-swiper-buttons button:hover,
-.hero-swiper-buttons button:focus {
+
+.swiper-buttons button:hover,
+.swiper-buttons button:focus {
+  background-color:#fceee6;
+}
+
+.swiper-buttons button:active {
   background-color: #5a2502;
 }
-.hero-swiper-buttons svg {
+
+.swiper-buttons button:disabled {
+  background-color: #e15d05;
+  opacity: 0.2;
+}
+
+.hero-content .btn:hover,
+.hero-content .btn:focus {
+  background-color: #ea8d50;;
+  color: #0b0500;
+}
+
+
+
+.swiper-buttons svg {
   width: 24px;
   height: 24px;
   fill: black;
 }
+
 .custom-prev:disabled,
 .custom-next:disabled {
   opacity: 0.2;
   pointer-events: none;
 }
+
+/* Responsive Headings */
 @media (max-width: 767px) {
   .hero-heading.mobile { display: block; }
-  .hero-swiper-buttons { display: none; }
+  .swiper-buttons { display: none; }
+  .swiper-slide { height: 199px; }
 }
+
 @media (min-width: 768px) and (max-width: 1439px) {
   .hero-heading.tablet { display: block; }
-  .hero-slide-bg { height: 274px; border-radius: 12px; }
+  .swiper-slide { height: 274px; border-radius: 12px; }
   .hero-content { left: 40px; bottom: 32px; }
   .hero-content h2 { font-size: 32px; width: 389px; }
   .hero-content .btn { width: 164px; height: 32px; font-size: 16px; line-height: 32px; }
   .hero-title { width: 560px; font-size: 40px; }
 }
+
 @media (min-width: 1440px) {
   .hero-heading.desktop { display: block; }
-  .hero-slide-bg { height: 395px; border-radius: 16px; }
+  .swiper-slide { height: 395px; border-radius: 16px; }
   .hero-content { left: 56px; bottom: 56px; gap: 20px; }
   .hero-content h2 { font-size: 52px; width: 561px; }
   .hero-content .btn { width: 227px; height: 40px; font-size: 16px; line-height: 40px; }
-  .hero-title { width: 560px; font-size: 52px; }
+  .hero-title { width: 1168px; font-size: 52px; }
 }
-
-
