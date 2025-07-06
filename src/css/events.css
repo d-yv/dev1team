@@ -13,24 +13,16 @@
 }
 
 .events-label {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
+  margin-bottom: 16px;
 }
 
 .events-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 12px;
+  margin-bottom: 16px;
 }
 
 .events-subtitle {
-  max-width: 520px;
-  margin-bottom: 28px;
-  color: #555;
-  line-height: 1.45;
+  max-width: 343px;
+  margin-bottom: 32px;
 }
 
 /* ----------  Swiper container ---------- */
@@ -42,59 +34,56 @@
 .event-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 545px;
   border-radius: 8px;
   box-sizing: border-box;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 342px;
 }
+
 .event-text-content {
-  height: 172px;
-  padding: 24px 0;
+  height: 200px;
+  padding: 24px 0 0 0;
+  margin-bottom: 16px;
 }
 
 .event-img {
   width: 100%;
-  height: auto;
+  height: 277px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 14px;
 }
 
 .event-name {
-  font-size: 18px;
-  font-weight: 600;
   margin: 0 0 4px;
-  color: #003344;
 }
 
 .event-meta {
-  font-size: 14px;
-  color: #888;
-  margin: 0 0 12px;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .event-desc {
-  font-size: 14px;
-  flex-grow: 1;
+  font-size: 16px;
   margin-bottom: 16px;
-  color: #333;
 }
 
 
 
 .event-register {
-  align-self: flex-start;
+ /* align-self: flex-start;*/
+  display: inline-flex;
   background: transparent;
   border: none;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;;
-  padding: 6px 20px;
+  padding: 6px 0px 6px 0px;
   cursor: pointer;
   border-radius: 4px;
 }
 
-.icon--arrow {
-  fill:#0b0500;
+.event-arrow {
   stroke: #0b0500;
 }
 
@@ -150,10 +139,12 @@
   cursor: default;
   opacity: .4;
 }
-.nav-icon {
+
+.event-nav-icon {
   fill: #fff;
   stroke: #fff;
 }
+
 /* ----------  Pagination dots ---------- */
 .event-swiper-pagination {
   text-align: left !important;
@@ -173,6 +164,20 @@
   opacity: 1;
 }
 
+.events-section .swiper-pagination {
+  position: static !important;
+}
+
+@media (max-width: 341px) {
+  .event-card {
+    width: calc(100vw - 32px) !important;
+  }
+/*
+  .events-swiper .swiper-slide {
+    width: 100% !important;
+  }*/
+}
+
 /* ----------  Breakpoints ---------- */
 @media (min-width: 768px) {
 
@@ -183,13 +188,14 @@
     }
 
   .events-title { font-size: 32px; }
-
+/*
   .events-btn-prev { left: 0; }
   .events-btn-next { left: 48px; }
-  .events-swiper .swiper-slide {
+  .events-swiper {
     width: 342px !important;
    }
-  
+
+  /*
   .events-btn-prev,
   .events-btn-next {
     top: 166px;
@@ -201,30 +207,18 @@
 
   .events-btn-next {
     right: 120px !important;
-   }
+   }*/
   
 }
 
 @media (min-width: 1440px) {
   .events-title { font-size: 36px; }
-
+/*
   .events-btn-prev { left: calc(50% - 620px); }
-  .events-btn-next { left: calc(50% - 564px); }
+  .events-btn-next { left: calc(50% - 564px); }*/
 }
 
 
-.event-register{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin:0;
-  padding:0;
-  border:none;
-  background:transparent;
-  font:inherit;
-  color:inherit;
-  cursor:pointer;
-}
 .event-arrow,
 .icon--arrow{
   width:24px;
@@ -241,7 +235,7 @@
       max-width: none;
       width: 1440px;
     }
-  
+  /*
   .events-swiper .swiper-wrapper {
       margin-left: 0;
       margin-right: -24px;
@@ -249,10 +243,11 @@
   .events-swiper .swiper-slide{ width:421px !important; }
   .event-img{ height:277px; object-fit:cover; }
 
-  
+  */
 }
 
 @media (max-width:767px) {
+  /*
   .events-swiper .swiper-slide {
     width: 342px !important;
   }
@@ -263,9 +258,11 @@
   }
 
   /* центр 277‑px картинки */
+  
 }
 
 @media (min-width:768px) and (max-width:1439px) {
+  /*
   .events-swiper .swiper-slide {
     width: 340px !important;
   }
@@ -273,5 +270,5 @@
   .events-btn-prev,
   .events-btn-next {
     top: 166px;
-  }
+  }*/
 }

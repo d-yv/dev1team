@@ -1,3 +1,7 @@
+:root {
+  --font-color : 0b0500;
+}
+
 html {
   scroll-behavior: smooth;
 }
