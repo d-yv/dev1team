@@ -1,14 +1,13 @@
 import Swiper from 'swiper';
+import 'swiper/css/bundle';
 
 import {
     Navigation,
-    Keyboard
-}
+    Keyboard,
+    Pagination, 
+} from 'swiper/modules';
 
-from 'swiper/modules';
-
-
-Swiper.use([Navigation, Keyboard]);
+Swiper.use([Navigation, Keyboard, Pagination]);
 
 
 function updateButtonsState(swiperInstance) {
@@ -34,12 +33,18 @@ function updateButtonsState(swiperInstance) {
 
 const feedbacksSwiper = new Swiper('.feedbacks-swiper', {
     slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 24,
     loop: false,
 
     navigation: {
         nextEl: '.feedbacks-button-next',
         prevEl: '.feedbacks-button-prev',
+    },
+
+    pagination: {
+        el: '.feedbacks-pagination',
+        clickable: true,
     },
 
     keyboard: {
