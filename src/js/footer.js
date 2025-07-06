@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const formData = {
     email: ""};
 
@@ -26,6 +29,13 @@ form.addEventListener('submit', (event) => {
         return;
     }
     console.log(formData);
+    
+    iziToast.success({
+            title: 'Success',
+            message: 'Message sent successfully!',
+            position: 'topRight',
+            timeout: 3000
+        });
     
     localStorage.removeItem(STORAGE_KEY);
 
