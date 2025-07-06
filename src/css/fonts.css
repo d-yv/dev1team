@@ -1,0 +1,31 @@
+.font-title 
+{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: var(--font-color)
+}
+
+.font-h2{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--font-color)
+}
+
+.font-p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--font-color)
+} 
+
+.font-subtitle {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--font-color)
+}
