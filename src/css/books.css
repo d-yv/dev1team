@@ -29,6 +29,16 @@
   cursor: pointer;
 }
 
+.books-category-item.selected {
+  font-weight: 700;
+  /* background-color: #ea8d50; */
+  color: #e15d05;
+}
+
+.books-category-item:hover {
+  font-weight: 700;
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .books-categories-block {
@@ -38,6 +48,10 @@
   }
   .books-category-title p {
     margin-left: 40px;
+  }
+
+  .books-category-select {
+    width: 249px;
   }
 }
 
@@ -204,7 +218,6 @@
   /* margin: 24px auto 32px; */
 }
 
-.books-load-more:hover,
-.books-load-more:focus {
-  background-color: #fff;
+.books-load-more:hover {
+  background-color: #ea8d50;
 }
