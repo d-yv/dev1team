@@ -9,9 +9,13 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+}
+
+.is-open {
+  display: flex;
 }
 
 .modal-content {
