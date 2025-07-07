@@ -1,5 +1,4 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import {showMessage} from './show-message';
 
 const formData = {
     email: ""};
@@ -25,17 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (formData.email === "") {
-        alert("Fill please all fields.");
+       alert("Fill please all fields.");
         return;
     }
     console.log(formData);
     
-    iziToast.success({
-            title: 'Success',
-            message: 'Message sent successfully!',
-            position: 'topRight',
-            timeout: 3000
-        });
+    showMessage('green', 'Message sent successfully!');
     
     localStorage.removeItem(STORAGE_KEY);
 
