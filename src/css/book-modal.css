@@ -95,6 +95,11 @@ body.no-scroll {
   color: #0B0500;
   font-size: 16px;
   background-color: transparent;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quantity-button:hover {
+  background-color: #EA8D50;
 }
 
 .quantity-input {
@@ -127,17 +132,26 @@ body.no-scroll {
   height: 48px;
   font-weight: 400;
   font-size: 16px;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .book-add-to-card {
-  border: 1px solid #e15d05;
-  background: #e15d05;
+  border: 1px solid #E15D05;
+  background: #E15D05;
   color: white;
+}
+
+.book-add-to-card:hover {
+  background-color: #0B0500;
 }
 
 .book-buy-now {
   background-color: transparent;
   border: 1px solid #0B0500;
+}
+
+.book-buy-now:hover {
+  background-color: #EA8D50;
 }
 
 .book-modal-right {
