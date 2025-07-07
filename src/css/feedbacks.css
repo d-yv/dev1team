@@ -76,6 +76,12 @@
     color: #0b0500;
 }
 
+.feedb-photo {
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+}
+
 .feedbacks-arrow {
     fill: #fff;
 }
