@@ -1,6 +1,9 @@
 import axios from 'axios';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 
 const modal = document.getElementById('modal');
 const closeButton = document.querySelector('.close-button');
@@ -8,8 +11,9 @@ const booksList = document.querySelector('.books-list');
 const quantityInput = modal.querySelector('#quantity');
 const increaseButton = modal.querySelector('#increase');
 const decreaseButton = modal.querySelector('#decrease');
+const addToCartButton = modal.querySelector('.book-add-to-card');
+const buyNowButton = modal.querySelector('.book-buy-now');
 
-// Инициализация событий
 booksList.addEventListener('click', async event => {
   if (event.target.classList.contains('book-learn-more')) {
     const bookId = event.target.getAttribute('data-id');
@@ -42,13 +46,30 @@ decreaseButton.addEventListener('click', () => {
   }
 });
 
+addToCartButton.addEventListener('click', () => {
+  const quantity = parseInt(quantityInput.value);
+  iziToast.info({
+    title: 'Added to cart',
+    message: `${quantity} book(s) successfully added to your cart.`,
+    position: 'topRight',
+  });
+});
+
+buyNowButton.addEventListener('click', () => {
+  iziToast.success({
+    title: 'Thank you!',
+    message: 'Your purchase was successful.',
+    position: 'topRight',
+  });
+});
+
 // Получение данных книги
 async function fetchBookById(id) {
   try {
     const response = await axios.get(`/books/${id}`);
     return response.data;
   } catch (error) {
-    console.error('Ошибка при получении книги:', error.message);
+    console.error('Error getting a book:', error.message);
     return null;
   }
 }
