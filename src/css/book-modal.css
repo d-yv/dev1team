@@ -18,6 +18,10 @@
   display: flex;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .modal-content {
   display: flex;
   flex-direction: column;
