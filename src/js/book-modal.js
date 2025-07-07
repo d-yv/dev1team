@@ -2,75 +2,108 @@ import axios from 'axios';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
-new Accordion('.accordion-container', {
-  duration: 400,
-  showMultiple: true,
-});
-
-// Получаем элементы
 const modal = document.getElementById('modal');
 const closeButton = document.querySelector('.close-button');
 const booksList = document.querySelector('.books-list');
+const quantityInput = modal.querySelector('#quantity');
+const increaseButton = modal.querySelector('#increase');
+const decreaseButton = modal.querySelector('#decrease');
 
-// Обработчик клика на кнопке "Learn more"
+// Инициализация событий
 booksList.addEventListener('click', async event => {
   if (event.target.classList.contains('book-learn-more')) {
     const bookId = event.target.getAttribute('data-id');
-
     const bookData = await fetchBookById(bookId);
-    displayBookInModal(bookData);
+    if (bookData) displayBookInModal(bookData);
   }
 });
 
-/* Получаем объект книги по id */
-async function fetchBookById(id) {
-  try {
-    const response = await axios.get(`/books/${id}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching book by ID:', error.message);
-  }
-}
-
-/* Формируем данные в модалке */
-function displayBookInModal(book) {
-  modal.querySelector('.modal-book-image').src = book.book_image;
-  modal.querySelector('h3').innerText = book.title;
-  modal.querySelector('.modal-author').innerText = book.author;
-  modal.querySelector('.book-card-price').innerText = '$' + book.price;
-
-  // Заполнение аккордеона данными книги
-  const detailsText = document.querySelector('.book-details');
-  const shippingText = document.querySelector('.book-shipping');
-  const returnsText = document.querySelector('.book-returns');
-
-  detailsText.innerText = book.description;
-  shippingText.innerText = book.amazon_product_url;
-  returnsText.innerText = book.contributor;
-
-  // Показываем модальное окно
-  modal.style.display = 'block';
-}
-
-// Закрытие модального окна
 closeButton.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-// Закрытие модального окна при клике вне его
 window.addEventListener('click', event => {
   if (event.target === modal) {
     modal.style.display = 'none';
   }
 });
 
-// Изменение количества
-// increaseButton.addEventListener("click", () => {
-//     quantityInput.value = parseInt(quantityInput.value) + 1;
-// });
+// Обработка кнопок +/-
+increaseButton.addEventListener('click', () => {
+  quantityInput.value = parseInt(quantityInput.value) + 1;
+});
 
-// decreaseButton.addEventListener("click", () => {
-//     if (quantityInput.value > 1) {
-//         quantityInput.value = parseInt(quantityInput.value) - 1;
-//     }
-// });
+decreaseButton.addEventListener('click', () => {
+  const current = parseInt(quantityInput.value);
+  if (current > 1) {
+    quantityInput.value = current - 1;
+  }
+});
+
+// Получение данных книги
+async function fetchBookById(id) {
+  try {
+    const response = await axios.get(`/books/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Ошибка при получении книги:', error.message);
+    return null;
+  }
+}
+
+// Отображение книги в модалке
+function displayBookInModal(book) {
+  // Обновляем основные данные
+  modal.querySelector('.modal-book-image').src = book.book_image || './img/placeholder.jpg';
+  modal.querySelector('h3').innerText = book.title || 'No title';
+  modal.querySelector('.modal-author').innerText = book.author || 'Unknown author';
+  modal.querySelector('.book-card-price').innerText = book.price ? `$${book.price}` : 'N/A';
+
+  // Перерендерим аккордеон
+  renderAccordion(book);
+
+  // Сброс количества
+  quantityInput.value = 1;
+
+  // Показываем модалку
+  modal.style.display = 'block';
+}
+
+// Рендеринг аккордеона заново
+function renderAccordion(book) {
+  const accordionWrapper = modal.querySelector('.accordion-list');
+  accordionWrapper.innerHTML = `
+    <div class="accordion-container">
+      <div class="ac accordion-item">
+        <h2 class="ac-header">
+          <button type="button" class="ac-trigger">Details</button>
+        </h2>
+        <div class="ac-panel">
+          <p class="ac-text book-details">${book.description || 'No details'}</p>
+        </div>
+      </div>
+      <div class="ac accordion-item">
+        <h2 class="ac-header">
+          <button type="button" class="ac-trigger">Shipping</button>
+        </h2>
+        <div class="ac-panel">
+          <p class="ac-text book-shipping">${book.amazon_product_url || 'Shipping info not available'}</p>
+        </div>
+      </div>
+      <div class="ac accordion-item">
+        <h2 class="ac-header">
+          <button type="button" class="ac-trigger">Returns</button>
+        </h2>
+        <div class="ac-panel">
+          <p class="ac-text book-returns">${book.contributor || 'No return policy info'}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Переинициализируем accordion-js
+  new Accordion('.accordion-container', {
+    duration: 400,
+    showMultiple: true,
+  });
+}

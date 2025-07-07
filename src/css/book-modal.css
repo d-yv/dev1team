@@ -1,7 +1,6 @@
 /* BOOKS MODAL */
 /* #region book-modal */
 .book-modal {
-  display: none; /* Скрыто по умолчанию */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -10,26 +9,44 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   display: flex;
   flex-direction: column;
   border-radius: 16px;
-  /* padding: 64px 16px; */
-  padding: 0px 16px;
-  width: 343px;
-  background-color: #fefefe;
-  margin: 15% auto;
+  width: 100%;
+  max-width: 1300px; /* добавлено */
+  padding: 64px 104px;
+  background-color: #FCEEE6;
+  position: relative;
+  margin: 64px auto; /* добавлено */
 }
 
-.close-button {
+.book-modal-content {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: start;
   flex-direction: row;
-  justify-content: end;
+  gap: 24px;
+}
+
+
+.close-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  width: 32px;
+  height: 32px;
+  top: 25px;
+  right: 25px;
+  font-size: 20px;
 }
 
 .close-button:hover,
@@ -40,19 +57,58 @@
 }
 
 .modal-book-image {
-  max-width: 100%;
+  width: 309px;
   height: auto;
+}
+
+.book-modal-form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
 }
 
 .quantity {
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 8px;
 }
 
 .quantity-button {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0B0500;
+  border-radius: 4px;
+  color: #0B0500;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.quantity-input {
+  width: 42px;
+  height: 40px;
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B05000D;
+  border: 1px solid #0B050026;
+  border-radius: 4px;
+}
+
+.book-form-buttons {
+  width: 642px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-direction: row;
+  margin-top: 16px;
 }
 
 .book-add-to-card,
@@ -61,16 +117,65 @@
   padding: 12px 24px;
   width: 311px;
   height: 48px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .book-add-to-card {
   border: 1px solid #e15d05;
   background: #e15d05;
-  margin-bottom: 24px;
+  color: white;
 }
 
 .book-buy-now {
-  border: 1px solid #0b0500;
-  margin-bottom: 32px;
+  background-color: transparent;
+  border: 1px solid #0B0500;
+}
+
+.book-modal-right {
+  flex: 1;
+}
+
+.book-modal-heading {
+  width: 642px;
+}
+
+.book-modal-heading h3 {
+  width: 100%;
+  font-weight: 600;
+  font-size: 40px;
+  color: #0b0500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+}
+
+.book-modal-heading p {
+  width: 100%;
+  font-size: 14px;
+  color: #0b0500;
+}
+
+.accordion-list {
+  margin-top: 32px;
+}
+
+.accordion-container .accordion-item {
+  border-top: 1px solid #0B050026;
+  background-color: transparent;
+}
+
+.accordion-item .ac-header {
+  height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.ac-header .ac-trigger {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0px !important;
 }
 /* #endregion book-modal */

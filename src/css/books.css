@@ -104,6 +104,11 @@
   height: 487px;
 }
 
+.book-modal-content {
+  display: flex;
+  flex-direction: row;
+}
+
 .books-category-title,
 .book-card-content {
   display: flex;
