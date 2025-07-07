@@ -1,7 +1,6 @@
 import { showMessage } from './show-message.js';
 
-
-let backdrop, closeBtn, form, titleEl;
+let backdrop, closeBtn, form, titleEl, fields;
 let ready = false;
 
 export function openEventModal(title) {
@@ -33,10 +32,33 @@ function initModal() {
   backdrop.addEventListener('click', e => e.target === backdrop && close());
   document.addEventListener('keydown', e => e.key === 'Escape' && close());
 
+  fields = form.querySelectorAll('input[name], textarea[name]');
+  fields.forEach(field => {
+    field.addEventListener('input', () => {
+      if (field.validity.valid) {
+        field.classList.remove('invalid');
+      } else {
+        field.classList.add('invalid');
+      }
+    });
+  });
+
   form.addEventListener('submit', e => {
     e.preventDefault();
-    showMessage(green,'Thank you for registering!');
+
+    const bad = Array.from(fields).find(f => !f.validity.valid);
+    if (bad) {
+      bad.classList.add('invalid');
+    //  const container = bad.closest('.events-modal-field') || document.body;
+      //  showMessage2('red', bad.validationMessage, container);
+      showMessage('red', bad.validationMessage)
+      bad.focus();
+      return;
+    }
+
+    showMessage('green', 'Thank you for registering!');
     form.reset();
+    fields.forEach(f => f.classList.remove('invalid'));
     close();
   });
 

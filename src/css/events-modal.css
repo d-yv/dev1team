@@ -1,75 +1,104 @@
-
-/* modal.css  |  Generic modal styles */
-.modal-backdrop {
+.events-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--background-hidden-collor);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-.modal {
-  background: #fffaf7;
-  width: 90%;
-  max-width: 520px;
-  padding: 32px;
-  border-radius: 12px;
+.events-modal {
   position: relative;
+  background: var(--background-color);
+  width: 100%;
+  max-width: 343px;
+  padding: 64px 16px;
+  border-radius: 16px;  
 }
 
-.modal-close {
+.events-modal-close {
   position: absolute;
-  top: 12px;
+  top: 16px;
   right: 16px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 32px;
   cursor: pointer;
 }
 
-.modal-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 0;
-  text-align: center;
-}
-
-.modal-event-name {
-  text-align: center;
-  margin-bottom: 24px;
-  font-weight: 500;
-}
-
-.modal-field {
-  display: block;
+.events-modal-title {
+  font-size: 48px;
   margin-bottom: 16px;
-  font-size: 14px;
+  text-align: center;
 }
 
-.modal-field input,
-.modal-field textarea {
+.events-modal-event-name {
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: 24px;
+}
+
+.events-modal-field {
+  display: block;
+  position: relative;
+}
+
+.events-modal-field input,
+.events-modal-field textarea {
+  background: rgba(11, 5, 0, 0.05);;
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 4px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.events-modal-field input{
+  height: 40px;
+}
+.events-modal-field textarea{
+  height: 180px;
+}
+.events-modal-field input.invalid,
+.events-modal-field textarea.invalid {
+  border-color: #ad0000;
+  color: #ad0000;
 }
 
-.modal-submit {
+.events-modal-submit {
   width: 100%;
   background: #f35c1c;
   color: #fff;
-  border: none;
-  padding: 12px 0;
+  border: 1px solid #e15d05;
+  padding: 12px 24px;
   font-size: 16px;
+  height: 48px;
   cursor: pointer;
   border-radius: 4px;
   transition: opacity 0.25s ease;
 }
 
-.modal-submit:hover {
+.events-modal-submit:hover {
   opacity: 0.9;
 }
+
+@media (min-width: 768px) {
+  .events-modal {
+    width: 704px;
+    max-width: none;
+    padding: 64px 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .events-modal {
+    width: 866px;
+    height: 760px;
+    max-width: none;
+    padding: 64px;
+  }
+
+}
+

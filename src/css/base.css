@@ -1,5 +1,7 @@
 :root {
   --font-color: #0b0500;
+  --background-color:#FCEEE6;
+  --background-hidden-collor: rgba(0, 0, 0, 0.25);
 }
 
 html {
@@ -11,7 +13,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #FCEEE6;
+  background-color: var(--background-color);
   color: #1b414b;
 }
 
@@ -30,6 +32,6 @@ body {
 
 @media (hover: hover) {
   .btn:hover {
-    background: #FCEEE6;
+    background: var(--background-color);
   }
 }
