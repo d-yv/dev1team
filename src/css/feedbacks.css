@@ -61,11 +61,18 @@
     color: #0b0500;
 }
 
-.feedbacks-profile-info h4 {
+.feedbacks-profile-info {
     font-weight: 600;
     font-size: 14px;
     color: #333;
     margin: 0;
+}
+
+.feedb-name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #0b0500;
 }
 
 .feedbacks-from {
