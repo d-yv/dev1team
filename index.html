@@ -18,7 +18,7 @@
     <script type="module" crossorigin src="/project-dev1team/index.js"></script>
     <link rel="modulepreload" crossorigin href="/project-dev1team/assets/vendor-iKaUpIhi.js">
     <link rel="stylesheet" crossorigin href="/project-dev1team/assets/vendor-06AMjbQk.css">
-    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-DV-kZaeX.css">
+    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-C9Q48S3U.css">
   </head>
   <body>
     <header class="header container">
@@ -311,85 +311,30 @@
       <div class="books-categories-block">
         <div class="books-category-title">
           <h3>Books</h3>
-          <p>Showing <span>24</span> of <span>100</span></p>
+          <p>
+            Showing <span class="books-carrent-quantity">24</span> of
+            <span class="books-all-quantity">100</span>
+          </p>
         </div>
-        <!-- <select name="books-catgories" class="books-category-select"> -->
-        <select class="books-category-select original-select">
-          <div class="custom-select-wrapper">
-            <div class="custom-select-trigger">
-              <span class="selected-value">Categories</span>
-              <div class="arrow"></div>
-            </div>
-            <div class="custom-options"></div>
-          </div>
-          <!-- <option>Categories</option> -->
-          <!-- <option value="">All Categories</option> -->
-          <!-- <option value="">Lorem ipsum dolor sit amet.</option>
-          <option value="">Necessitatibus ut iste debitis autem.</option>
-          <option value="">Nesciunt cumque nisi qui ea.</option>
-          <option value="">Pariatur eaque qui numquam recusandae!</option>
-          <option value="">Nisi omnis alias voluptatibus fuga.</option> -->
+
+        <select name="books-catgories" class="books-category-select">
+          <option>Categories</option>
+          <option value="">All Categories</option>
         </select>
       </div>
 
       <ul class="books-category">
-        <!-- <li>All categories</li> -->
-        <!-- <li>Lorem ipsum dolor sit amet.</li>
-        <li>Odio natus ab eos qui!</li>
-        <li>At quo sed reiciendis laudantium!</li>
-        <li>Pariatur quae eos deserunt ab!</li>
-        <li>Dicta nam mollitia sunt aut!</li> -->
+        <li
+          class="books-category-item selected"
+          data-category-name="books-all-categories"
+        >
+          All categories
+        </li>
       </ul>
     </div>
     <div class="books-box-cards">
       <div class="book-card">
         <ul class="books-list">
-          <!-- <li class="books-item">
-            <img src="./img/book1.jpg" alt="" />
-
-            <div class="book-card-content">
-              <div class="book-card-heading">
-                <h3>I will find you ppp kkokk dfaefsdg</h3>
-                <p>Harlan Coben</p>
-              </div>
-              <div class="book-card-price">15$</div>
-            </div>
-            <button class="book-learn-more">Learn more</button>
-          </li> -->
-          <!-- <li class="books-item">
-          <img src="./img/book1.jpg" alt="" />
-          <div class="book-card-content">
-            <div class="book-card-heading">
-              <h3>I will find you</h3>
-              <p>Harlan Coben</p>
-            </div>
-            <div class="book-card-price">15$</div>
-          </div>
-          <button class="book-learn-more">Learn more</button>
-        </li> -->
-          <!-- <li class="books-item">
-          <img src="./img/book1.jpg" alt="" />
-          <div class="book-card-content">
-            <div class="book-card-heading">
-              <h3>I will find you</h3>
-              <p>Harlan Coben</p>
-            </div>
-            <div class="book-card-price">15$</div>
-          </div>
-          <button class="book-learn-more">Learn more</button>
-        </li> -->
-          <!-- <li class="books-item">
-          <img src="./img/book1.jpg" alt="" />
-          <div class="book-card-content">
-            <div class="book-card-heading">
-              <h3>I will find you</h3>
-              <p>Harlan Coben</p>
-            </div>
-            <div class="book-card-price">15$</div>
-          </div>
-          <button class="book-learn-more">Learn more</button>
-        </li> -->
-          <!-- <li class="books-item">
           <img src="./img/book1.jpg" alt="" />
           <div class="book-card-content">
             <div class="book-card-heading">
@@ -456,9 +401,11 @@
           <button class="book-learn-more">Learn more</button>
         </li> -->
         </ul>
+        <span class="books-loader"></span>
         <div class="books-button-load-more">
           <button class="books-load-more">Load more</button>
         </div>
+        <!-- <div class="books-loader"></div> -->
       </div>
     </div>
   </div>
