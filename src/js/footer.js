@@ -1,3 +1,5 @@
+import {showMessage} from './show-message';
+
 const formData = {
     email: ""};
 
@@ -22,10 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (formData.email === "") {
-        alert("Fill please all fields.");
+       alert("Fill please all fields.");
         return;
     }
     console.log(formData);
+    
+    showMessage('green', 'Message sent successfully!');
     
     localStorage.removeItem(STORAGE_KEY);
 
