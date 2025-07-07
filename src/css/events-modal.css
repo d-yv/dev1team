@@ -3,13 +3,12 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.55);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
-.modal-backdrop.is-hidden { display: none; }
 
 .modal {
   background: #fffaf7;
@@ -19,6 +18,7 @@
   border-radius: 12px;
   position: relative;
 }
+
 .modal-close {
   position: absolute;
   top: 12px;
@@ -28,22 +28,26 @@
   font-size: 24px;
   cursor: pointer;
 }
+
 .modal-title {
   font-size: 28px;
   font-weight: 700;
   margin-top: 0;
   text-align: center;
 }
+
 .modal-event-name {
   text-align: center;
   margin-bottom: 24px;
   font-weight: 500;
 }
+
 .modal-field {
   display: block;
   margin-bottom: 16px;
   font-size: 14px;
 }
+
 .modal-field input,
 .modal-field textarea {
   width: 100%;
@@ -53,6 +57,7 @@
   font-family: inherit;
   font-size: 14px;
 }
+
 .modal-submit {
   width: 100%;
   background: #f35c1c;
@@ -62,6 +67,9 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
-.modal-submit:hover { opacity: .9; }
+
+.modal-submit:hover {
+  opacity: 0.9;
+}
