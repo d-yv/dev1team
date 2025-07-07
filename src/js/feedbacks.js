@@ -14,6 +14,9 @@ function updateButtonsState(swiperInstance) {
     const prevBtn = document.querySelector('.feedbacks-button-prev');
     const nextBtn = document.querySelector('.feedbacks-button-next');
 
+    prevBtn.blur();
+    nextBtn.blur();
+
     if (swiperInstance.isBeginning) {
         prevBtn.disabled = true;
         prevBtn.classList.add('disabled');
