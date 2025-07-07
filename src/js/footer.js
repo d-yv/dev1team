@@ -18,6 +18,10 @@ form.addEventListener('submit', (event) => {
       showMessage('red', 'Fill please all fields.');
         return;
     }
+    if (!emailInput.checkValidity()){
+      showMessage('red', 'Please enter a valid email address.');
+      return;
+    }
     console.log(formData);
     showMessage('green', 'Message sent successfully!');
     
