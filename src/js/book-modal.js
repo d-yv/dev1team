@@ -20,11 +20,13 @@ booksList.addEventListener('click', async event => {
 
 closeButton.addEventListener('click', () => {
   modal.style.display = 'none';
+  document.body.classList.remove('no-scroll');
 });
 
 window.addEventListener('click', event => {
   if (event.target === modal) {
     modal.style.display = 'none';
+    document.body.classList.remove('no-scroll');
   }
 });
 
@@ -53,6 +55,7 @@ async function fetchBookById(id) {
 
 // Отображение книги в модалке
 function displayBookInModal(book) {
+  document.body.classList.add('no-scroll');
   // Обновляем основные данные
   modal.querySelector('.modal-book-image').src = book.book_image || './img/placeholder.jpg';
   modal.querySelector('h3').innerText = book.title || 'No title';
@@ -66,7 +69,7 @@ function displayBookInModal(book) {
   quantityInput.value = 1;
 
   // Показываем модалку
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
 }
 
 // Рендеринг аккордеона заново
