@@ -2,7 +2,7 @@
 /* #region book-modal */
 .book-modal {
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   left: 0;
   top: 0;
   width: 100%;
@@ -200,6 +200,10 @@ body.no-scroll {
 
   .book-modal-content {
     flex-direction: row;
+  }
+
+  .book-modal-right {
+    width: 309px;
   }
 
   .modal-book-image {
