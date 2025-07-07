@@ -21,17 +21,6 @@ let currentWindows = window.innerWidth;
 let booksInBox = 10;
 let booksShowed = 0;
 
-// Обработчик события изменения размера окна
-// addEventListener('resize', () => {
-//   if (
-//     (window.innerWidth > 767 && currentWindows < 768) ||
-//     (window.innerWidth > 1439 && currentWindows < 1440) ||
-//     (window.innerWidth < 1440 && currentWindows > 1439) ||
-//     (window.innerWidth < 768 && currentWindows > 767)
-//   ) {
-//     location.reload();
-//   }
-// });
 
 if (currentWindows >= 1440) {
   booksInBox = 24;
