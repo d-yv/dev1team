@@ -19,19 +19,19 @@
   flex-direction: column;
   border-radius: 16px;
   width: 100%;
-  max-width: 1300px; /* добавлено */
-  padding: 64px 104px;
+  max-width: 343px;
+  padding: 64px 16px;
   background-color: #FCEEE6;
   position: relative;
-  margin: 64px auto; /* добавлено */
+  margin: 64px auto;
 }
 
 .book-modal-content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: start;
-  flex-direction: row;
+  flex-direction: column;
   gap: 24px;
 }
 
@@ -41,12 +41,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #0B0500;
   width: 32px;
   height: 32px;
-  top: 25px;
-  right: 25px;
-  font-size: 20px;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
 }
 
 .close-button:hover,
@@ -102,12 +102,12 @@
 }
 
 .book-form-buttons {
-  width: 642px;
+  width: 311px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 16px;
 }
 
@@ -177,5 +177,53 @@
   font-size: 18px;
   font-weight: 600;
   padding: 0px !important;
+}
+
+.accordion-container .accordion-item {
+  width: 311px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .modal-content {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .book-modal-content {
+    flex-direction: row;
+  }
+
+  .modal-book-image {
+    width: 309px;
+    height: auto;
+  }
+
+  .book-form-buttons {
+    flex-direction: column;
+    width: 307px;
+  }
+
+  .accordion-container .accordion-item {
+    width: 307px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  .modal-content {
+    max-width: 1300px;
+    padding: 64px 104px;
+    margin: 64px auto;
+  }
+
+  .book-form-buttons {
+    width: 642px;
+    flex-direction: row;
+  }
+
+  .accordion-container .accordion-item {
+    width: 100%;
+  }
 }
 /* #endregion book-modal */
