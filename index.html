@@ -18,7 +18,7 @@
     <script type="module" crossorigin src="/project-dev1team/index.js"></script>
     <link rel="modulepreload" crossorigin href="/project-dev1team/assets/vendor-iKaUpIhi.js">
     <link rel="stylesheet" crossorigin href="/project-dev1team/assets/vendor-06AMjbQk.css">
-    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-D4P_1Cxo.css">
+    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-Bl1-G9af.css">
   </head>
   <body>
     <header class="header container">
@@ -942,27 +942,25 @@
 </footer>
 
     <!-- events-modal.html (partial) -->
-<div class="events-modal-backdrop events-modal--hidden hidden" id="events-modal-backdrop">
-  <div class="events-modal">
-    <button class="events-modal-close" id="events-modal-close" aria-label="Close modal">&times;</button>
-    <h2 class="events-modal-title">Register</h2>
-    <p class="events-modal-event-name" id="events-modal-event-name"></p>
-
-    <form class="events-modal-form" id="events-modal-form">
-      <label class="events-modal-field">
+<div id="events-modal-backdrop" class="modal-backdrop visually-hidden">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="events-modal-title">
+    <button type="button" id="events-modal-close" class="modal-close" aria-label="Close modal">&times;</button>
+    <h2 id="events-modal-title" class="modal-title">Register</h2>
+    <p id="events-modal-event-name" class="modal-event-name"></p>
+    <form id="events-modal-form" class="modal-form">
+      <label class="modal-field">
         Name*
         <input type="text" name="name" required />
       </label>
-      <label class="events-modal-field">
+      <label class="modal-field">
         Email*
         <input type="email" name="email" required />
       </label>
-      <label class="events-modal-field">
+      <label class="modal-field">
         Message
         <textarea name="message" rows="4"></textarea>
       </label>
-
-      <button type="submit" class="events-modal-submit">Register</button>
+      <button type="submit" class="modal-submit">Register</button>
     </form>
   </div>
 </div>
