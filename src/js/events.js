@@ -24,13 +24,12 @@ function updateNav(sw) {
   nextBtn.disabled = sw.isEnd;
 }
 
-updateNav(eventsSwiper);                   // після ініціалізації
+updateNav(eventsSwiper);                   
 eventsSwiper.on('slideChange', () => updateNav(eventsSwiper));
 
 /* -------- modal click -------- */
 eventWrapper.addEventListener('click', (evt) => {
   const btn = evt.target.closest('.event-register');
-  if (!btn) return;
-  console.log(btn.dataset.title);          // консоль лишила
+  if (!btn) return;    
   openEventModal(btn.dataset.title);
 });
