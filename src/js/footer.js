@@ -10,6 +10,8 @@ const emailInput = form.elements.email;
 form.addEventListener('input', (event) => {
     if (event.target.name === 'email') {
         formData.email = event.target.value.trim();
+      emailInput.style.borderColor ='rgba(11, 5, 0, 0.60)';
+  emailInput.style.color = '#0B0500';
     }
 });
 
