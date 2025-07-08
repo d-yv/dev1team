@@ -124,11 +124,6 @@ input {
   background:rgba(11, 5, 0, 0.05);
 }
 
-.footer-input:invalid:not(:placeholder-shown) {
-  border-radius: 4px;
-  border: 1px solid #AD0000;
-  color: #AD0000;
-}
 .footer-input:valid:not(:placeholder-shown){
    border-radius: 4px;
   border: 1px solid rgba(11, 5, 0, 0.15);
