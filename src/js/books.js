@@ -37,15 +37,14 @@ window.addEventListener('resize', () => {
 async function fetchCategories() {
     try {
       const { data } = await axios.get('/books/category-list');
-      
+
       makeCategories(data);
     } catch (error) {
         console.error('Error fetching categories:', error.message);
     }
 }
 
-
-  fetchCategories();
+fetchCategories();
     
 // Запрос на получение топовых (всех) книг
 async function fetchBooks(func) {
@@ -105,12 +104,12 @@ function makeCategories(response) {
   if (window.innerWidth < 1440) {
     const booksSelected = document.querySelector('.books-selected');
     let booksOptionsContainer = document.querySelector('.books-options-container');
-
+    const selCategoryStart = '<div class="books-option" data-category-name="books-all-categories">All categories</div>'
     const selCategory = response.map(category =>
         `<div class="books-option" data-category-name="${category.list_name}">${category.list_name}</div>`
     ).join('');
     
-    booksOptionsContainer.insertAdjacentHTML('beforeend', selCategory);
+    booksOptionsContainer.insertAdjacentHTML('beforeend', selCategoryStart + selCategory);
     
     // Открытие/закрытие выпадающего меню
     booksSelected.addEventListener('click', () => {
@@ -132,10 +131,11 @@ function makeCategories(response) {
         }
     });
   } else {
+    const liCategoryStart = '<li class="books-category-item selected" data-category-name="books-all-categories">All categories</li>';
     const liCategory = response.map(category =>
             `<li class="books-category-item" data-category-name="${category.list_name}">${category.list_name}</li>`
         ).join('');
-    category.insertAdjacentHTML('beforeend', liCategory);
+    category.insertAdjacentHTML('beforeend', liCategoryStart + liCategory);
     }
 }
 
