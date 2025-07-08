@@ -21,11 +21,17 @@ let currentPage = 1;
 let currentWindows = window.innerWidth;
 let booksInBox = 10;
 let booksShowed = 0;
-
-
 if (currentWindows >= 1440) {
   booksInBox = 24;
 }
+
+window.addEventListener('resize', () => {
+  category.innerHTML = '';
+  categorySelect.innerHTML = '';
+  
+  fetchCategories();
+});
+
 
 // Запрос на получение категорий
 async function fetchCategories() {
@@ -38,7 +44,8 @@ async function fetchCategories() {
     }
 }
 
-fetchCategories();
+
+  fetchCategories();
     
 // Запрос на получение топовых (всех) книг
 async function fetchBooks(func) {
@@ -97,8 +104,8 @@ function selectMenuItem(categoryName) {
 function makeCategories(response) {
   if (window.innerWidth < 1440) {
     const booksSelected = document.querySelector('.books-selected');
-    const booksOptionsContainer = document.querySelector('.books-options-container');
-    
+    let booksOptionsContainer = document.querySelector('.books-options-container');
+
     const selCategory = response.map(category =>
         `<div class="books-option" data-category-name="${category.list_name}">${category.list_name}</div>`
     ).join('');

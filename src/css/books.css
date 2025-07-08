@@ -43,9 +43,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    flex-grow: initial;
   }
   .books-category-title p {
     margin-left: 40px;
+    margin-right: 10px;
   }
 
   .books-category-select {
