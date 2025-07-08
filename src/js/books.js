@@ -1,16 +1,16 @@
 import "./book-modal.js";
 import axios from 'axios';
+import {showLoader, hideLoader} from './loader';
 
 axios.defaults.baseURL = "https://books-backend.p.goit.global";
 
-const categories = document.querySelector('.books-categories');
 const category = document.querySelector('.books-category');
 const booksList = document.querySelector('.books-list');
 const loadMoreButton = document.querySelector('.books-load-more');
 const categorySelect = document.querySelector('.books-options-container');
 const booksAllQuantity = document.querySelector('.books-all-quantity');
 const booksCarrentQuantity = document.querySelector('.books-carrent-quantity');
-const booksLoader = document.querySelector('books-loader');
+const booksLoader = document.querySelector('loader');
 
 category.addEventListener('click', getName);
 categorySelect.addEventListener('click', getName);
@@ -26,9 +26,9 @@ if (currentWindows >= 1440) {
 }
 
 window.addEventListener('resize', () => {
-  category.innerHTML = '';
-  categorySelect.innerHTML = '';
-  
+  // category.innerHTML = '';
+  // categorySelect.innerHTML = '';
+  location.reload();
   fetchCategories();
 });
 
