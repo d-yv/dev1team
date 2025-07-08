@@ -1,5 +1,3 @@
-@import url('./custom-select.css');
-
 /* #region categories */
 .books-categories-block {
   margin-bottom: 24px;
@@ -200,6 +198,7 @@
 
 /* #endregion card */
 
+/* #region button-load-more */
 .books-button-load-more {
   text-align: center;
 }
@@ -221,3 +220,108 @@
 .books-load-more:hover {
   background-color: #ea8d50;
 }
+/* #endregion button-load-more */
+
+/* #region custom-select */
+.books-custom-select {
+  position: relative;
+  max-width: 342px;
+  width: 100%;
+  display: inline-block;
+}
+
+.books-selected {
+  cursor: pointer;
+
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 12px;
+  max-width: 342px;
+  width: 100%;
+  height: 43px;
+
+  background-color: rgba(11, 5, 0, 0.05);
+}
+
+.books-options-container {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px); /* Позиция под выбранным элементом */
+  left: 0;
+  right: 0;
+  background-color: #f0e1da;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 5px;
+  max-height: 296px;
+  overflow-y: auto;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  z-index: 99;
+}
+
+.books-options-container.active {
+  display: block; /* Показываем выпадающее меню */
+}
+
+/* Стилизация полосы прокрутки для WebKit-браузеров */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc; /* Цвет фона полосы прокрутки */
+  border-radius: 10px; /* Скругление углов фона */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: #ea8d50; Цвет "ползунка" полосы прокрутки */
+  border-radius: 10px; /* Скругление углов "ползунка" */
+
+  width: 5px;
+  height: 47px;
+
+  background: #e15d05;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d78b48; /* Цвет "ползунка" при наведении */
+}
+
+/* Стилизация полосы прокрутки для Firefox */
+.books-options-container {
+  scrollbar-width: thin; /* Делаем полосу прокрутки тонкой */
+  scrollbar-color: #e15d05 rgba(11, 5, 0, 0.15); /* Цвет "ползунка" и цвет фона */
+}
+
+.books-option {
+  /* padding: 5px; Отступы */
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  width: 100%;
+  height: 37px;
+
+  font-size: 14px;
+  color: #0b0500;
+}
+
+.books-option:hover {
+  background: rgba(11, 5, 0, 0.05);
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .books-custom-select,
+  .books-selected {
+    max-width: 249px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .books-custom-select {
+    display: none;
+  }
+}
+/* #endregion custom-select */
