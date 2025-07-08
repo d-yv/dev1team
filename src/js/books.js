@@ -8,12 +8,14 @@ const category = document.querySelector('.books-category');
 const booksList = document.querySelector('.books-list');
 const loadMoreButton = document.querySelector('.books-load-more');
 // const categorySelect = document.querySelector('.books-category-select');
-const categorySelect = document.querySelector('.books-custom-select');
+// const categorySelect = document.querySelector('.books-custom-select');
+const categorySelect = document.querySelector('.books-options-container');
 const booksAllQuantity = document.querySelector('.books-all-quantity');
 const booksCarrentQuantity = document.querySelector('.books-carrent-quantity');
 const booksLoader = document.querySelector('books-loader');
 
 category.addEventListener('click', getName);
+categorySelect.addEventListener('click', getName);
 
 let booksData = [];
 let currentPage = 1;

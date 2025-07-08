@@ -142,13 +142,17 @@
   color: #0b0500;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+  text-overflow: ellipsis;
   max-width: 100%;
 }
 
 .book-card-heading p {
   font-size: 14px;
   color: #0b0500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .book-card-price {
@@ -260,6 +264,14 @@
 
 .books-options-container.active {
   display: block; /* Показываем выпадающее меню */
+}
+
+.books-option,
+.books-selected {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* Стилизация полосы прокрутки для WebKit-браузеров */
