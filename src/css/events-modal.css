@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .events-modal {
@@ -14,7 +14,7 @@
   width: 100%;
   max-width: 343px;
   padding: 64px 16px;
-  border-radius: 16px;  
+  border-radius: 16px;
 }
 
 .events-modal-close {
@@ -46,7 +46,8 @@
 
 .events-modal-field input,
 .events-modal-field textarea {
-  background: rgba(11, 5, 0, 0.05);;
+  background: rgba(11, 5, 0, 0.05);
+  ;
   width: 100%;
   padding: 8px 12px;
   border: 1px solid rgba(11, 5, 0, 0.15);
@@ -55,12 +56,15 @@
   font-size: 16px;
   margin-bottom: 24px;
 }
-.events-modal-field input{
+
+.events-modal-field input {
   height: 40px;
 }
-.events-modal-field textarea{
+
+.events-modal-field textarea {
   height: 180px;
 }
+
 .events-modal-field input.invalid,
 .events-modal-field textarea.invalid {
   border-color: #ad0000;
@@ -101,4 +105,3 @@
   }
 
 }
-
