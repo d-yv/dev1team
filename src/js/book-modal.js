@@ -1,9 +1,8 @@
 import axios from 'axios';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
-import iziToast from 'izitoast';
+import { showMessage } from './show-message';
 import 'izitoast/dist/css/iziToast.min.css';
-
 
 const modal = document.getElementById('modal');
 const closeButton = document.querySelector('.close-button');
@@ -48,19 +47,11 @@ decreaseButton.addEventListener('click', () => {
 
 addToCartButton.addEventListener('click', () => {
   const quantity = parseInt(quantityInput.value);
-  iziToast.info({
-    title: 'Added to cart',
-    message: `${quantity} book(s) successfully added to your cart.`,
-    position: 'topRight',
-  });
+  showMessage('green', `${quantity} book(s) successfully added to your cart.`);
 });
 
 buyNowButton.addEventListener('click', () => {
-  iziToast.success({
-    title: 'Thank you!',
-    message: 'Your purchase was successful.',
-    position: 'topRight',
-  });
+  showMessage('green', 'Thank you!, Your purchase was successful.');
 });
 
 // Получение данных книги
@@ -78,10 +69,14 @@ async function fetchBookById(id) {
 function displayBookInModal(book) {
   document.body.classList.add('no-scroll');
   // Обновляем основные данные
-  modal.querySelector('.modal-book-image').src = book.book_image || './img/placeholder.jpg';
+  modal.querySelector('.modal-book-image').src =
+    book.book_image || './img/placeholder.jpg';
   modal.querySelector('h3').innerText = book.title || 'No title';
-  modal.querySelector('.modal-author').innerText = book.author || 'Unknown author';
-  modal.querySelector('.book-card-price').innerText = book.price ? `$${book.price}` : 'N/A';
+  modal.querySelector('.modal-author').innerText =
+    book.author || 'Unknown author';
+  modal.querySelector('.book-card-price').innerText = book.price
+    ? `$${book.price}`
+    : 'N/A';
 
   // Перерендерим аккордеон
   renderAccordion(book);
@@ -103,7 +98,9 @@ function renderAccordion(book) {
           <button type="button" class="ac-trigger">Details</button>
         </h2>
         <div class="ac-panel">
-          <p class="ac-text book-details">${book.description || 'No details'}</p>
+          <p class="ac-text book-details">${
+            book.description || 'No details'
+          }</p>
         </div>
       </div>
       <div class="ac accordion-item">
@@ -111,7 +108,9 @@ function renderAccordion(book) {
           <button type="button" class="ac-trigger">Shipping</button>
         </h2>
         <div class="ac-panel">
-          <p class="ac-text book-shipping">${book.amazon_product_url || 'Shipping info not available'}</p>
+          <p class="ac-text book-shipping">${
+            book.amazon_product_url || 'Shipping info not available'
+          }</p>
         </div>
       </div>
       <div class="ac accordion-item">
@@ -119,7 +118,9 @@ function renderAccordion(book) {
           <button type="button" class="ac-trigger">Returns</button>
         </h2>
         <div class="ac-panel">
-          <p class="ac-text book-returns">${book.contributor || 'No return policy info'}</p>
+          <p class="ac-text book-returns">${
+            book.contributor || 'No return policy info'
+          }</p>
         </div>
       </div>
     </div>
