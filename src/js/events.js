@@ -11,6 +11,7 @@ const nextBtn      = document.querySelector('.events-btn-next');
 const eventsSwiper = new Swiper('.events-swiper', {
   slidesPerView: 1,
   spaceBetween: 5,
+  keyboard: {enabled: true},
   pagination : { el: '.event-swiper-pagination', clickable: true },
   navigation : { nextEl: nextBtn, prevEl: prevBtn },
   breakpoints: {
