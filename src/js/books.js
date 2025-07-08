@@ -121,20 +121,20 @@ function makeCategories(response) {
     const booksOptionsContainer = document.querySelector('.books-options-container');
     const booksOptionsList = document.querySelectorAll('.books-option');
 
-    response.map(
-      category =>
+    const selCategory = response.map(category =>
         `<div class="books-option" data-category-name="${category.list_name}">${category.list_name}</div>`
     ).join('');
+    
     console.log('categ:', category);
         // categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(response));
-    category.insertAdjacentHTML('beforeend', booksOptionsContainer);
+    booksOptionsContainer.insertAdjacentHTML('beforeend', selCategory);
+    
     // Открытие/закрытие выпадающего меню
     booksSelected.addEventListener('click', () => {
         booksOptionsContainer.classList.toggle('active'); // Переключаем видимость выпадающего меню
     });
   } else {
-    const liCategory = response.map(
-        category =>
+    const liCategory = response.map(category =>
             `<li class="books-category-item" data-category-name="${category.list_name}">${category.list_name}</li>`
         ).join('');
     category.insertAdjacentHTML('beforeend', liCategory);
