@@ -47,7 +47,7 @@ const feedbacksSwiper = new Swiper('.feedbacks-swiper', {
 
     pagination: {
         el: '.feedbacks-pagination',
-        clickable: true,
+        clickable: false,
     },
 
     keyboard: {
@@ -72,4 +72,10 @@ const feedbacksSwiper = new Swiper('.feedbacks-swiper', {
             updateButtonsState(swiper);
         },
     },
+});
+
+document.querySelectorAll('.feedbacks-pagination .swiper-pagination-bullet').forEach(el => {
+    el.removeAttribute('role');
+    el.removeAttribute('tabindex');
+    el.removeAttribute('aria-label');
 });
