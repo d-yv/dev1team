@@ -49,18 +49,19 @@ fetchCategories();
 // );
     
 // Запрос на получение топовых (всех) книг
-async function fetchBooks() {
+async function fetchBooks(func) {
     try {
         const { data } = await axios.get('/books/top-books');
       // return data;
-      createStartBooks(data);
+      // createStartBooks(data);
+      func(data);
     } catch (error) {
         console.error('Error fetching top-books:', error.message);
     }
 }
 
 // Получение топовых книг
-fetchBooks();
+fetchBooks(createStartBooks);
   // .then(response => {
   //   createStartBooks(response);
   // })
@@ -76,8 +77,8 @@ async function fetchBooksByCategory(categoryName) {
                 category: categoryName
             }
         });
-        
-        return data; 
+      // return data; 
+      setAllBooksAfterClick(data);
     } catch (error) {
         console.error('Error fetching books by category:', error.message);
     }
@@ -88,21 +89,21 @@ function getName(event) {
   let categoryName = event.target.getAttribute('data-category-name');
     // console.log('categoryName',categoryName);
     if (categoryName === 'books-all-categories') {
-    fetchBooks()
-      .then(response => {
-        createStartBooks(response);
-      })
-        .catch(error =>
-            console.log(error)
-        );
+    fetchBooks(createStartBooks);
+      // .then(response => {
+      //   createStartBooks(response);
+      // })
+      //   .catch(error =>
+      //       console.log(error)
+      //   );
   } else {
-      fetchBooksByCategory(categoryName)
-          .then(response => {
-        setAllBooksAfterClick(response);
-      })
-          .catch(error =>
-              console.log(error)
-          );
+      fetchBooksByCategory(categoryName);
+      //     .then(response => {
+      //   setAllBooksAfterClick(response);
+      // })
+      //     .catch(error =>
+      //         console.log(error)
+      //     );
   }
       selectMenuItem(categoryName);
 }
