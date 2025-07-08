@@ -7,7 +7,8 @@ const categories = document.querySelector('.books-categories');
 const category = document.querySelector('.books-category');
 const booksList = document.querySelector('.books-list');
 const loadMoreButton = document.querySelector('.books-load-more');
-const categorySelect = document.querySelector('.books-category-select');
+// const categorySelect = document.querySelector('.books-category-select');
+const categorySelect = document.querySelector('.books-custom-select');
 const booksAllQuantity = document.querySelector('.books-all-quantity');
 const booksCarrentQuantity = document.querySelector('.books-carrent-quantity');
 const booksLoader = document.querySelector('books-loader');
@@ -113,15 +114,28 @@ function selectMenuItem(categoryName) {
         selectedItem.classList.add('selected');
     }
 }
-
+const booksCustomSelect = document.querySelector('.books-custom-select');
 function makeCategories(response) {
-    if (window.innerWidth < 1440) {
-        categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(response));
-    } else {
-const liCategory = response.map(
+  if (window.innerWidth < 1440) {
+    const booksSelected = document.querySelector('.books-selected');
+    const booksOptionsContainer = document.querySelector('.books-options-container');
+    const booksOptionsList = document.querySelectorAll('.books-option');
+
+    response.map(
+      category =>
+        `<div class="books-option" data-category-name="${category.list_name}">${category.list_name}</div>`
+    ).join('');
+    console.log('categ:', category);
+        // categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(response));
+    category.insertAdjacentHTML('beforeend', booksOptionsContainer);
+    // Открытие/закрытие выпадающего меню
+    booksSelected.addEventListener('click', () => {
+        booksOptionsContainer.classList.toggle('active'); // Переключаем видимость выпадающего меню
+    });
+  } else {
+    const liCategory = response.map(
         category =>
-            `<li class="books-category-item" data-category-name="${category.list_name}">${category.list_name}</li>
-            </li>`
+            `<li class="books-category-item" data-category-name="${category.list_name}">${category.list_name}</li>`
         ).join('');
     category.insertAdjacentHTML('beforeend', liCategory);
     }
@@ -129,13 +143,43 @@ const liCategory = response.map(
 
 // Отрисовка категорий селектом (select/option)
 function createSelectCategories(response) {
-    console.log('arr',response);
-    const startCategory = '<option>Categories</option><option value="">All categories</option>';
-    const allCategories = response.map((category) => `
-        <option value="${category.list_name}">${category.list_name}</option>
-    `).join('');
+  console.log('arr', response);
+  
+const booksCustomSelect = document.querySelector('.books-custom-select');
+    const booksSelected = document.querySelector('.books-selected');
+    const booksOptionsContainer = document.querySelector('.books-options-container');
+    const booksOptionsList = document.querySelectorAll('.books-option');
+
+  booksCustomSelect.style.display = 'inline';
+  // categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(data));
+  // customSelect.style.display = 'none';
+    // Открытие/закрытие выпадающего меню
+    booksSelected.addEventListener('click', () => {
+        booksOptionsContainer.classList.toggle('active'); // Переключаем видимость выпадающего меню
+    });
+
+    // Изменение выбранного элемента
+    booksOptionsList.forEach(option => {
+        option.addEventListener('click', () => {
+            selected.innerText = option.innerText; // Изменяем текст выбранного элемента
+            booksOptionsContainer.classList.remove('active'); // Закрываем меню
+        });
+    });
+
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', (event) => {
+        if (!selected.contains(event.target) && !optionsContainer.contains(event.target)) {
+            booksOptionsContainer.classList.remove('active');
+        }
+    });
+  
+  
+  // const startCategory = '<option>Categories</option><option value="">All categories</option>';
+  //   const allCategories = response.map((category) => `
+  //       <option value="${category.list_name}">${category.list_name}</option>
+  //   `).join('');
     
-    return startCategory + allCategories;
+  //   return startCategory + allCategories;
 }
 
 
