@@ -78,17 +78,13 @@ function displayBookInModal(book) {
     ? `$${book.price}`
     : 'N/A';
 
-  // Перерендерим аккордеон
   renderAccordion(book);
 
-  // Сброс количества
   quantityInput.value = 1;
 
-  // Показываем модалку
   modal.style.display = 'flex';
 }
 
-// Рендеринг аккордеона заново
 function renderAccordion(book) {
   const accordionWrapper = modal.querySelector('.accordion-list');
   accordionWrapper.innerHTML = `
@@ -126,7 +122,6 @@ function renderAccordion(book) {
     </div>
   `;
 
-  // Переинициализируем accordion-js
   new Accordion('.accordion-container', {
     duration: 400,
     showMultiple: true,

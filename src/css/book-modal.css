@@ -1,8 +1,6 @@
-/* BOOKS MODAL */
-/* #region book-modal */
 .book-modal {
   position: fixed;
-  z-index: 5;
+  z-index: 9999999;
   left: 0;
   top: 0;
   width: 100%;
@@ -170,7 +168,6 @@ body.no-scroll {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Добавить многоточие (...) в конце */
 }
 
 .book-modal-heading p {
@@ -261,5 +258,3 @@ body.no-scroll {
     width: 100%;
   }
 }
-
-/* #endregion book-modal */
