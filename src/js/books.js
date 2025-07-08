@@ -7,8 +7,6 @@ const categories = document.querySelector('.books-categories');
 const category = document.querySelector('.books-category');
 const booksList = document.querySelector('.books-list');
 const loadMoreButton = document.querySelector('.books-load-more');
-// const categorySelect = document.querySelector('.books-category-select');
-// const categorySelect = document.querySelector('.books-custom-select');
 const categorySelect = document.querySelector('.books-options-container');
 const booksAllQuantity = document.querySelector('.books-all-quantity');
 const booksCarrentQuantity = document.querySelector('.books-carrent-quantity');
@@ -33,7 +31,7 @@ if (currentWindows >= 1440) {
 async function fetchCategories() {
     try {
       const { data } = await axios.get('/books/category-list');
-      // return data;
+      
       makeCategories(data);
     } catch (error) {
         console.error('Error fetching categories:', error.message);
@@ -41,19 +39,12 @@ async function fetchCategories() {
 }
 
 fetchCategories();
-//   .then(response => {
-//     makeCategories(response);
-//   })
-//     .catch(error =>
-//         console.log(error)
-// );
     
 // Запрос на получение топовых (всех) книг
 async function fetchBooks(func) {
     try {
-        const { data } = await axios.get('/books/top-books');
-      // return data;
-      // createStartBooks(data);
+      const { data } = await axios.get('/books/top-books');
+      
       func(data);
     } catch (error) {
         console.error('Error fetching top-books:', error.message);
@@ -62,12 +53,6 @@ async function fetchBooks(func) {
 
 // Получение топовых книг
 fetchBooks(createStartBooks);
-  // .then(response => {
-  //   createStartBooks(response);
-  // })
-  //   .catch(error =>
-  //       console.log(error)
-  //   );
 
 // Запрос на получение книг по категории
 async function fetchBooksByCategory(categoryName) {
@@ -77,7 +62,7 @@ async function fetchBooksByCategory(categoryName) {
                 category: categoryName
             }
         });
-      // return data; 
+      
       setAllBooksAfterClick(data);
     } catch (error) {
         console.error('Error fetching books by category:', error.message);
@@ -87,23 +72,10 @@ async function fetchBooksByCategory(categoryName) {
 
 function getName(event) {
   let categoryName = event.target.getAttribute('data-category-name');
-    // console.log('categoryName',categoryName);
     if (categoryName === 'books-all-categories') {
     fetchBooks(createStartBooks);
-      // .then(response => {
-      //   createStartBooks(response);
-      // })
-      //   .catch(error =>
-      //       console.log(error)
-      //   );
   } else {
       fetchBooksByCategory(categoryName);
-      //     .then(response => {
-      //   setAllBooksAfterClick(response);
-      // })
-      //     .catch(error =>
-      //         console.log(error)
-      //     );
   }
       selectMenuItem(categoryName);
 }
@@ -122,7 +94,6 @@ function selectMenuItem(categoryName) {
 
 // Отрисовка категорий селектом (select/option) если innerWidth < 1440,
 // в противном случае отрисовка категорий списком
-
 function makeCategories(response) {
   if (window.innerWidth < 1440) {
     const booksSelected = document.querySelector('.books-selected');
@@ -141,7 +112,6 @@ function makeCategories(response) {
     
     const booksOptionsList = document.querySelectorAll('.books-option');
     
-    // Изменение выбранного элемента
     booksOptionsList.forEach(option => {
         option.addEventListener('click', () => {
           booksSelected.innerText = option.innerText; // Изменяем текст выбранного элемента
@@ -149,7 +119,6 @@ function makeCategories(response) {
         });
     });
 
-    // Закрытие меню при клике вне его
     document.addEventListener('click', (event) => {
         if (!booksSelected.contains(event.target) && !booksOptionsContainer.contains(event.target)) {
             booksOptionsContainer.classList.remove('active');
