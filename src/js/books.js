@@ -30,39 +30,41 @@ if (currentWindows >= 1440) {
 // Запрос на получение категорий
 async function fetchCategories() {
     try {
-        const { data } = await axios.get('/books/category-list');
-        return data;
+      const { data } = await axios.get('/books/category-list');
+      // return data;
+      makeCategories(data);
     } catch (error) {
         console.error('Error fetching categories:', error.message);
     }
 }
 
-fetchCategories()
-  .then(response => {
-    makeCategories(response);
-  })
-    .catch(error =>
-        console.log(error)
-);
+fetchCategories();
+//   .then(response => {
+//     makeCategories(response);
+//   })
+//     .catch(error =>
+//         console.log(error)
+// );
     
 // Запрос на получение топовых (всех) книг
 async function fetchBooks() {
     try {
         const { data } = await axios.get('/books/top-books');
-        return data;
+      // return data;
+      createStartBooks(data);
     } catch (error) {
         console.error('Error fetching top-books:', error.message);
     }
 }
 
 // Получение топовых книг
-fetchBooks()
-  .then(response => {
-    createStartBooks(response);
-  })
-    .catch(error =>
-        console.log(error)
-    );
+fetchBooks();
+  // .then(response => {
+  //   createStartBooks(response);
+  // })
+  //   .catch(error =>
+  //       console.log(error)
+  //   );
 
 // Запрос на получение книг по категории
 async function fetchBooksByCategory(categoryName) {
@@ -82,7 +84,7 @@ async function fetchBooksByCategory(categoryName) {
 
 function getName(event) {
   let categoryName = event.target.getAttribute('data-category-name');
-    console.log('categoryName',categoryName);
+    // console.log('categoryName',categoryName);
     if (categoryName === 'books-all-categories') {
     fetchBooks()
       .then(response => {
@@ -114,24 +116,41 @@ function selectMenuItem(categoryName) {
         selectedItem.classList.add('selected');
     }
 }
-const booksCustomSelect = document.querySelector('.books-custom-select');
+
+// Отрисовка категорий селектом (select/option) если innerWidth < 1440,
+// в противном случае отрисовка категорий списком
+
 function makeCategories(response) {
   if (window.innerWidth < 1440) {
     const booksSelected = document.querySelector('.books-selected');
     const booksOptionsContainer = document.querySelector('.books-options-container');
-    const booksOptionsList = document.querySelectorAll('.books-option');
-
+    
     const selCategory = response.map(category =>
         `<div class="books-option" data-category-name="${category.list_name}">${category.list_name}</div>`
     ).join('');
     
-    console.log('categ:', category);
-        // categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(response));
     booksOptionsContainer.insertAdjacentHTML('beforeend', selCategory);
     
     // Открытие/закрытие выпадающего меню
     booksSelected.addEventListener('click', () => {
         booksOptionsContainer.classList.toggle('active'); // Переключаем видимость выпадающего меню
+    });
+    
+    const booksOptionsList = document.querySelectorAll('.books-option');
+    
+    // Изменение выбранного элемента
+    booksOptionsList.forEach(option => {
+        option.addEventListener('click', () => {
+          booksSelected.innerText = option.innerText; // Изменяем текст выбранного элемента
+            booksOptionsContainer.classList.remove('active');
+        });
+    });
+
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', (event) => {
+        if (!booksSelected.contains(event.target) && !booksOptionsContainer.contains(event.target)) {
+            booksOptionsContainer.classList.remove('active');
+        }
     });
   } else {
     const liCategory = response.map(category =>
@@ -140,48 +159,6 @@ function makeCategories(response) {
     category.insertAdjacentHTML('beforeend', liCategory);
     }
 }
-
-// Отрисовка категорий селектом (select/option)
-function createSelectCategories(response) {
-  console.log('arr', response);
-  
-const booksCustomSelect = document.querySelector('.books-custom-select');
-    const booksSelected = document.querySelector('.books-selected');
-    const booksOptionsContainer = document.querySelector('.books-options-container');
-    const booksOptionsList = document.querySelectorAll('.books-option');
-
-  booksCustomSelect.style.display = 'inline';
-  // categorySelect.insertAdjacentHTML('beforeend', createSelectCategories(data));
-  // customSelect.style.display = 'none';
-    // Открытие/закрытие выпадающего меню
-    booksSelected.addEventListener('click', () => {
-        booksOptionsContainer.classList.toggle('active'); // Переключаем видимость выпадающего меню
-    });
-
-    // Изменение выбранного элемента
-    booksOptionsList.forEach(option => {
-        option.addEventListener('click', () => {
-            selected.innerText = option.innerText; // Изменяем текст выбранного элемента
-            booksOptionsContainer.classList.remove('active'); // Закрываем меню
-        });
-    });
-
-    // Закрытие меню при клике вне его
-    document.addEventListener('click', (event) => {
-        if (!selected.contains(event.target) && !optionsContainer.contains(event.target)) {
-            booksOptionsContainer.classList.remove('active');
-        }
-    });
-  
-  
-  // const startCategory = '<option>Categories</option><option value="">All categories</option>';
-  //   const allCategories = response.map((category) => `
-  //       <option value="${category.list_name}">${category.list_name}</option>
-  //   `).join('');
-    
-  //   return startCategory + allCategories;
-}
-
 
 function createStartBooks(response) {
   booksList.innerHTML = '';
