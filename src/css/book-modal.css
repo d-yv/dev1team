@@ -159,7 +159,7 @@ body.no-scroll {
 }
 
 .book-modal-heading {
-  width: 642px;
+  width: 311px;
 }
 
 .book-modal-heading h3 {
@@ -169,7 +169,8 @@ body.no-scroll {
   color: #0b0500;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+  text-overflow: ellipsis;
+  /* Добавить многоточие (...) в конце */
 }
 
 .book-modal-heading p {
@@ -225,6 +226,10 @@ body.no-scroll {
     height: auto;
   }
 
+  .book-modal-heading {
+    width: 307px;
+  }
+
   .book-form-buttons {
     flex-direction: column;
     width: 307px;
@@ -248,8 +253,13 @@ body.no-scroll {
     flex-direction: row;
   }
 
+  .book-modal-heading {
+    width: 759px;
+  }
+
   .accordion-container .accordion-item {
     width: 100%;
   }
 }
+
 /* #endregion book-modal */
