@@ -33,7 +33,7 @@
   flex-direction: column;
   height: 545px;
   border-radius: 8px;
-  box-sizing: border-box;
+ /* box-sizing: border-box;*/
   border: none;
   padding: 0;
   width: 100%;
@@ -79,7 +79,6 @@
   font-size: 16px;
   padding: 8px 0px 6px 0px;
   cursor: pointer;
-  border-radius: 4px;
   margin-bottom: 56px;
   width: 95px;
   height: 32px;
@@ -134,7 +133,7 @@
 .events-btn-next:hover,
 .events-btn-prev:focus-visible,
 .events-btn-next:focus-visible {
-  background: #FCEEE6;
+  background: var(--background-colorlor);
   color: #0B0500;
   outline: none;
 }
@@ -192,18 +191,27 @@
 }
 
 @media (min-width: 1440px) { 
+  
+  .events-section {
+      height: 849px;
+  }
+
   .events-container {
       min-width: none;
       max-width: none;
       width: 1440px;
-    }
+  }
   .event-card {
       max-width: 421px;
       width: 421px;
-    }
+  }
 
   .events-title { 
     font-size: 48px; 
+  }
+
+  .event-register{
+    margin-bottom: 0;
   }
 
   .events-btn-prev,
