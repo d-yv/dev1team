@@ -4,7 +4,7 @@
     right: 5px;
     display: none;
 
-    background: #e15d05;
+    background-color: #fceee62f;
     cursor: pointer;
     z-index: 99999;
 
@@ -15,12 +15,17 @@
 
 }
 
+.scroll-up:hover,
+.scroll-up:focus {
+    background-color: #e15d05;
+}
+
 .scroll-up.show {
     display: block;
 }
 
 .scroll-up-icon {
-    fill: #fff;
+    fill: #0B0500;
     align-items: center;
 }
 
