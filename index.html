@@ -19,7 +19,7 @@
     <script type="module" crossorigin src="/project-dev1team/index.js"></script>
     <link rel="modulepreload" crossorigin href="/project-dev1team/assets/vendor-iKaUpIhi.js">
     <link rel="stylesheet" crossorigin href="/project-dev1team/assets/vendor-06AMjbQk.css">
-    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-DLMoT5kP.css">
+    <link rel="stylesheet" crossorigin href="/project-dev1team/assets/index-1pj6gCp4.css">
   </head>
   <body>
     <header class="header container">
@@ -900,26 +900,31 @@
   </div>
 </footer>
 
-    <!-- events-modal.html (partial) -->
-<div id="events-modal-backdrop" class="modal-backdrop visually-hidden">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="events-modal-title">
-    <button type="button" id="events-modal-close" class="modal-close" aria-label="Close modal">&times;</button>
-    <h2 id="events-modal-title" class="modal-title">Register</h2>
-    <p id="events-modal-event-name" class="modal-event-name"></p>
-    <form id="events-modal-form" class="modal-form">
-      <label class="modal-field">
+    <!-- events-modal.html -->
+<div id="events-modal-backdrop" class="events-modal-backdrop visually-hidden">
+  <div class="events-modal" role="dialog" aria-modal="true" aria-labelledby="events-modal-title">
+    <button type="button" id="events-modal-close" class="events-modal-close" aria-label="Close modal">&times;</button>
+
+    <h2 id="events-modal-title" class="events-modal-title font-h2">Register</h2>
+    <p id="events-modal-event-name" class="events-modal-event-name font-subtitle"></p>
+
+    <form id="events-modal-form" class="events-modal-form " novalidate>
+      <label class="events-modal-field font-p">
         Name*
-        <input type="text" name="name" required />
+        <input type="text" name="name" placeholder="Ann" required />
       </label>
-      <label class="modal-field">
+
+      <label class="events-modal-field font-p">
         Email*
-        <input type="email" name="email" required />
+        <input type="email" name="email" placeholder="hello@booksy.com" required />
       </label>
-      <label class="modal-field">
+
+      <label class="events-modal-field font-p">
         Message
-        <textarea name="message" rows="4"></textarea>
+        <textarea name="message" placeholder="Type your message." rows="4" heigth="180px"></textarea>
       </label>
-      <button type="submit" class="modal-submit">Register</button>
+
+      <button type="submit" class="events-modal-submit font-p">Register</button>
     </form>
   </div>
 </div>
