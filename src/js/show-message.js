@@ -6,6 +6,7 @@ export function showMessage(color, message) {
     title: message,
     titleColor: color,
     position: 'bottomRight',
+    zindex: 9999,
   };
   return iziToast.show(messageData);
 }

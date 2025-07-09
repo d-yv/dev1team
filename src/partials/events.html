@@ -1,5 +1,5 @@
 <!-- events.html (partial) -->
-<section class="events-section" id="events">
+<section class="events-section container" id="events">
   <div class="container events-container">
     <p class="events-label font-title">Events</p>
     <h2 class="events-title font-h2">Upcoming Events at Booksy</h2>
@@ -8,62 +8,41 @@
       Everyone’s welcome.
     </p>
 
-    <div class="swiper events-swiper">
+    <div class="swiper events-swiper" tabindex="0">
       <ul class="swiper-wrapper event-wrapper">
         <!-- 1. Cozy Book Club -->
         <li class="swiper-slide event-card">
           <picture>
             <!-- Desktop WebP -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/desk-event-1-1x.webp 1x,
                 /img/events/desk-event-1-2x.webp 2x
-              "
-              type="image/webp"
-              media="(min-width: 1440px)"
-            />
+              " type="image/webp" media="(min-width: 1440px)" />
             <!-- Desktop JPG -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/desk-event-1-1x.jpg 1x,
                 /img/events/desk-event-1-2x.jpg 2x
-              "
-              media="(min-width: 1440px)"
-            />
+              " media="(min-width: 1440px)" />
 
             <!-- Tablet WebP -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/tablet-event-1-1x.webp 1x,
                 /img/events/tablet-event-1-2x.webp 2x
-              "
-              type="image/webp"
-              media="(min-width: 768px)"
-            />
+              " type="image/webp" media="(min-width: 768px)" />
             <!-- Tablet JPG -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/tablet-event-1-1x.jpg 1x,
                 /img/events/tablet-event-1-2x.jpg 2x
-              "
-              media="(min-width: 768px)"
-            />
+              " media="(min-width: 768px)" />
 
             <!-- Mobile WebP -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/mobile-event-1-1x.webp 1x,
                 /img/events/mobile-event-1-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Mobile JPG fallback -->
-            <img
-              class="event-img"
-              src="/img/events/mobile-event-1-1x.jpg"
-              srcset="/img/events/mobile-event-1-2x.jpg 2x"
-              alt="Cozy Book Club — “The Midnight Library”"
-            />
+            <img class="event-img" src="/img/events/mobile-event-1-1x.jpg" srcset="/img/events/mobile-event-1-2x.jpg 2x"
+              alt="Cozy Book Club — “The Midnight Library”" />
           </picture>
 
           <div class="event-text-content">
@@ -79,11 +58,7 @@
             </p>
           </div>
 
-          <button
-            type="button"
-            class="event-register font-p"
-            data-title="Cozy Book Club — “The Midnight Library”"
-          >
+          <button type="button" class="event-register font-p" data-title="Cozy Book Club — “The Midnight Library”">
             Register
             <svg class="event-arrow" width="24" height="24">
               <use href="/img/sprite.svg#chevron-right"></use>
@@ -95,56 +70,35 @@
         <li class="swiper-slide event-card">
           <picture>
             <!-- Desktop WebP -->
-            <source
-              media="(min-width: 1440px)"
-              srcset="
+            <source media="(min-width: 1440px)" srcset="
                 /img/events/desk-event-2-1x.webp 1x,
                 /img/events/desk-event-2-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Desktop JPG -->
-            <source
-              media="(min-width: 1440px)"
-              srcset="
+            <source media="(min-width: 1440px)" srcset="
                 /img/events/desk-event-2-1x.jpg 1x,
                 /img/events/desk-event-2-2x.jpg 2x
-              "
-            />
+              " />
 
             <!-- Tablet WebP -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
+            <source media="(min-width: 768px)" srcset="
                 /img/events/tablet-event-2-1x.webp 1x,
                 /img/events/tablet-event-2-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Tablet JPG -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
+            <source media="(min-width: 768px)" srcset="
                 /img/events/tablet-event-2-1x.jpg 1x,
                 /img/events/tablet-event-2-2x.jpg 2x
-              "
-            />
+              " />
 
             <!-- Mobile WebP -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/mobile-event-2-1x.webp 1x,
                 /img/events/mobile-event-2-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Mobile JPG fallback -->
-            <img
-              class="event-img"
-              src="/img/events/mobile-event-2-1x.jpg"
-              srcset="/img/events/mobile-event-2-2x.jpg 2x"
-              alt="Book Cover Design Workshop"
-            />
+            <img class="event-img" src="/img/events/mobile-event-2-1x.jpg" srcset="/img/events/mobile-event-2-2x.jpg 2x"
+              alt="Book Cover Design Workshop" />
           </picture>
 
           <div class="event-text-content">
@@ -158,11 +112,7 @@
             </p>
           </div>
 
-          <button
-            type="button"
-            class="event-register font-p"
-            data-title="Book Cover Design Workshop"
-          >
+          <button type="button" class="event-register font-p" data-title="Book Cover Design Workshop">
             Register
             <svg class="event-arrow" width="24" height="24">
               <use href="/img/sprite.svg#chevron-right"></use>
@@ -174,56 +124,35 @@
         <li class="swiper-slide event-card">
           <picture>
             <!-- Desktop WebP -->
-            <source
-              media="(min-width: 1440px)"
-              srcset="
+            <source media="(min-width: 1440px)" srcset="
                 /img/events/desk-event-3-1x.webp 1x,
                 /img/events/desk-event-3-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Desktop JPG -->
-            <source
-              media="(min-width: 1440px)"
-              srcset="
+            <source media="(min-width: 1440px)" srcset="
                 /img/events/desk-event-3-1x.jpg 1x,
                 /img/events/desk-event-3-2x.jpg 2x
-              "
-            />
+              " />
 
             <!-- Tablet WebP -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
+            <source media="(min-width: 768px)" srcset="
                 /img/events/tablet-event-3-1x.webp 1x,
                 /img/events/tablet-event-3-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Tablet JPG -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
+            <source media="(min-width: 768px)" srcset="
                 /img/events/tablet-event-3-1x.jpg 1x,
                 /img/events/tablet-event-3-2x.jpg 2x
-              "
-            />
+              " />
 
             <!-- Mobile WebP -->
-            <source
-              srcset="
+            <source srcset="
                 /img/events/mobile-event-3-1x.webp 1x,
                 /img/events/mobile-event-3-2x.webp 2x
-              "
-              type="image/webp"
-            />
+              " type="image/webp" />
             <!-- Mobile JPG fallback -->
-            <img
-              class="event-img"
-              src="/img/events/mobile-event-3-1x.jpg"
-              srcset="/img/events/mobile-event-3-2x.jpg 2x"
-              alt="Children’s Story Hour"
-            />
+            <img class="event-img" src="/img/events/mobile-event-3-1x.jpg" srcset="/img/events/mobile-event-3-2x.jpg 2x"
+              alt="Children’s Story Hour" />
           </picture>
 
           <div class="event-text-content">
@@ -237,11 +166,7 @@
             </p>
           </div>
 
-          <button
-            type="button"
-            class="event-register font-p"
-            data-title="Children’s Story Hour"
-          >
+          <button type="button" class="event-register font-p" data-title="Children’s Story Hour">
             Register
             <svg class="event-arrow" width="24" height="24">
               <use href="/img/sprite.svg#chevron-right"></use>

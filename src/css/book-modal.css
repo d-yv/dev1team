@@ -1,17 +1,15 @@
-/* BOOKS MODAL */
-/* #region book-modal */
 .book-modal {
   position: fixed;
-  z-index: 5;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
 }
 
 .is-open {
@@ -28,10 +26,11 @@ body.no-scroll {
   border-radius: 16px;
   width: 100%;
   max-width: 343px;
+  height: fit-content;
   padding: 64px 16px;
   background-color: #FCEEE6;
   position: relative;
-  margin: 64px auto;
+  margin: 64px auto 32px auto;
 }
 
 .book-modal-content {
@@ -159,7 +158,7 @@ body.no-scroll {
 }
 
 .book-modal-heading {
-  width: 642px;
+  width: 311px;
 }
 
 .book-modal-heading h3 {
@@ -169,7 +168,7 @@ body.no-scroll {
   color: #0b0500;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+  text-overflow: ellipsis;
 }
 
 .book-modal-heading p {
@@ -225,6 +224,10 @@ body.no-scroll {
     height: auto;
   }
 
+  .book-modal-heading {
+    width: 307px;
+  }
+
   .book-form-buttons {
     flex-direction: column;
     width: 307px;
@@ -248,8 +251,11 @@ body.no-scroll {
     flex-direction: row;
   }
 
+  .book-modal-heading {
+    width: 759px;
+  }
+
   .accordion-container .accordion-item {
     width: 100%;
   }
 }
-/* #endregion book-modal */

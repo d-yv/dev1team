@@ -43,9 +43,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
+
   .books-category-title p {
     margin-left: 40px;
+    margin-right: 10px;
   }
 
   .books-category-select {
@@ -81,7 +84,8 @@
   .books-category li {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Добавить многоточие (...) в конце */
+    text-overflow: ellipsis;
+    /* Добавить многоточие (...) в конце */
     max-width: 100%;
   }
 }
@@ -108,6 +112,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: transform 250ms ease-in-out;
+}
+
+.books-item:hover {
+  transform: scale(1.04);
 }
 
 .books-item img {
@@ -167,6 +176,7 @@
   padding: 8px 20px;
   width: 100%;
   height: 40px;
+  background-color: var(--background-color);
 }
 
 .book-learn-more:hover,
@@ -179,9 +189,11 @@
   .books-list {
     gap: 24px;
   }
+
   .books-list .books-item {
     width: calc((100% - 24px) / 2);
   }
+
   .books-item img {
     width: 340px;
     height: 483px;
@@ -193,6 +205,7 @@
   .books-list .books-item {
     width: calc((100% - 3 * 24px) / 4);
   }
+
   .books-item img {
     /* width: 227px; */
     width: 100%;
@@ -211,19 +224,20 @@
   border: 1px solid #e15d05;
   border-radius: 4px;
   padding: 12px 24px;
-  width: 342px;
+  max-width: 342px;
   height: 48px;
+  width: 100%;
 
   background: #e15d05;
 
   margin-top: 24px;
   margin-bottom: 32px;
-  /* margin: 24px auto 32px; */
 }
 
 .books-load-more:hover {
-  background-color: #ea8d50;
+  background-color: var(--background-color);
 }
+
 /* #endregion button-load-more */
 
 /* #region custom-select */
@@ -250,7 +264,8 @@
 .books-options-container {
   display: none;
   position: absolute;
-  top: calc(100% + 4px); /* Позиция под выбранным элементом */
+  top: calc(100% + 4px);
+  /* Позиция под выбранным элементом */
   left: 0;
   right: 0;
   background-color: #f0e1da;
@@ -263,7 +278,8 @@
 }
 
 .books-options-container.active {
-  display: block; /* Показываем выпадающее меню */
+  display: block;
+  /* Показываем выпадающее меню */
 }
 
 .books-option,
@@ -276,18 +292,22 @@
 
 /* Стилизация полосы прокрутки для WebKit-браузеров */
 ::-webkit-scrollbar {
-  width: 8px; /* Ширина полосы прокрутки */
+  width: 8px;
+  /* Ширина полосы прокрутки */
 }
 
 ::-webkit-scrollbar-track {
-  background: #ccc; /* Цвет фона полосы прокрутки */
-  border-radius: 10px; /* Скругление углов фона */
+  background: #ccc;
+  /* Цвет фона полосы прокрутки */
+  border-radius: 10px;
+  /* Скругление углов фона */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   /* background: #ea8d50; Цвет "ползунка" полосы прокрутки */
-  border-radius: 10px; /* Скругление углов "ползунка" */
+  border-radius: 10px;
+  /* Скругление углов "ползунка" */
 
   width: 5px;
   height: 47px;
@@ -296,13 +316,16 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d78b48; /* Цвет "ползунка" при наведении */
+  background: #d78b48;
+  /* Цвет "ползунка" при наведении */
 }
 
 /* Стилизация полосы прокрутки для Firefox */
 .books-options-container {
-  scrollbar-width: thin; /* Делаем полосу прокрутки тонкой */
-  scrollbar-color: #e15d05 rgba(11, 5, 0, 0.15); /* Цвет "ползунка" и цвет фона */
+  scrollbar-width: thin;
+  /* Делаем полосу прокрутки тонкой */
+  scrollbar-color: #e15d05 rgba(11, 5, 0, 0.15);
+  /* Цвет "ползунка" и цвет фона */
 }
 
 .books-option {
@@ -324,6 +347,7 @@
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+
   .books-custom-select,
   .books-selected {
     max-width: 249px;
@@ -336,4 +360,5 @@
     display: none;
   }
 }
+
 /* #endregion custom-select */
