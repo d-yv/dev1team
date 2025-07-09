@@ -194,7 +194,7 @@ function createBooksInBox() {
 function createBookItem(book) {
   return `
     <li class="books-item" data-id="${book._id}">
-      <img src="${book.book_image}" alt="${book.title}" width="${book.book_image_width}" height="${book.book_image_height}" />
+      <img src="${book.book_image}" alt="${book.title}" fetchpriority="high" />
       <div class="book-card-content">
         <div class="book-card-heading">
           <h3>${book.title}</h3>
