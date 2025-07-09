@@ -18,6 +18,7 @@ let booksData = [];
 let currentPage = 1;
 let booksShowed = 0;
 let booksInBox = window.innerWidth >= 1440 ? 24 : 10;
+let startBoxInBox = booksInBox;
 
 let resizeTimeout;
 window.addEventListener('resize', () => {
@@ -77,7 +78,8 @@ async function fetchBooksByCategory(categoryName) {
 function getName(event) {
   const categoryName = event.target.getAttribute('data-category-name');
   if (!categoryName) return;
-
+  
+  booksInBox = startBoxInBox;
   if (categoryName === 'books-all-categories') {
     fetchBooks(createStartBooks);
   } else {
