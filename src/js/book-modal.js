@@ -71,7 +71,7 @@ function displayBookInModal(book) {
   // Обновляем основные данные
   modal.querySelector('.modal-book-image').src =
     book.book_image || './img/placeholder.jpg';
-  modal.querySelector('h3').innerText = book.title || 'No title';
+  modal.querySelector('.book-modal-title').innerText = book.title || 'No title';
   modal.querySelector('.modal-author').innerText =
     book.author || 'Unknown author';
   modal.querySelector('.book-card-price').innerText = book.price
@@ -104,9 +104,7 @@ function renderAccordion(book) {
           <button type="button" class="ac-trigger">Shipping</button>
         </h2>
         <div class="ac-panel">
-          <p class="ac-text book-shipping">${
-            book.amazon_product_url || 'Shipping info not available'
-          }</p>
+          <p class="ac-text book-shipping">We ship across the United States within 2–5 business days. All orders are processed through USPS or a reliable courier service. Enjoy free standard shipping on orders over $50.</p>
         </div>
       </div>
       <div class="ac accordion-item">
@@ -114,9 +112,7 @@ function renderAccordion(book) {
           <button type="button" class="ac-trigger">Returns</button>
         </h2>
         <div class="ac-panel">
-          <p class="ac-text book-returns">${
-            book.contributor || 'No return policy info'
-          }</p>
+          <p class="ac-text book-returns">You can return an item within 14 days of receiving your order, provided it hasn’t been used and is in its original condition. To start a return, please contact our support team — we’ll guide you through the process quickly and hassle-free.</p>
         </div>
       </div>
     </div>
