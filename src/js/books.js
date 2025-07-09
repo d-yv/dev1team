@@ -7,7 +7,7 @@ axios.defaults.baseURL = 'https://books-backend.p.goit.global';
 const category = document.querySelector('.books-category');
 const categorySelect = document.querySelector('.books-options-container');
 const booksList = document.querySelector('.books-list');
-const loadMoreButton = document.querySelector('.books-load-more');
+const loadMoreButton = document.querySelector('.books-show-more');
 const booksAllQuantity = document.querySelector('.books-all-quantity');
 const booksCarrentQuantity = document.querySelector('.books-carrent-quantity');
 
@@ -194,7 +194,7 @@ function createBooksInBox() {
 function createBookItem(book) {
   return `
     <li class="books-item" data-id="${book._id}">
-      <img src="${book.book_image}" alt="${book.title}" />
+      <img src="${book.book_image}" alt="${book.title}" width="${book.book_image_width}" height="${book.book_image_height}" />
       <div class="book-card-content">
         <div class="book-card-heading">
           <h3>${book.title}</h3>
