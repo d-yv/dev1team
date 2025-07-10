@@ -1,7 +1,7 @@
 .hero {
   width: 100%;
   position: relative;
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .hero-slider {
@@ -33,9 +33,13 @@
   z-index: 2;
 }
 
+.span {
+  display: block;
+
+}
+
 .hero-heading {
   display: none;
-  word-break: break-word;
 }
 
 .hero-content h2 {
@@ -126,23 +130,12 @@
 /* Responsive Headings */
 @media (max-width: 767px) {
   .hero-heading.mobile { display: block; }
-  .hero-heading.tablet,
-  .hero-heading.desktop { display: none; }
-  .hero-heading-1.mobile { max-width: 172px; font-size: 20px; }
-  .hero-heading-2.mobile { max-width: 172px; font-size: 20px; }
-  .hero-heading-3.mobile { max-width: 311px; font-size: 20px; }
-  .hero-heading-4.mobile { max-width: 228px; font-size: 20px; }
   .swiper-buttons { display: none; }
   .swiper-slide { height: 199px; }
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
-  .hero-heading.mobile { display: none; }
   .hero-heading.tablet { display: block; }
-  .hero-heading-1.tablet { max-width: 274px; font-size: 32px; }
-  .hero-heading-2.tablet { max-width: 202px; font-size: 32px; }
-  .hero-heading-3.tablet { max-width: 389px; font-size: 32px; }
-  .hero-heading-4.tablet { max-width: 389px; font-size: 32px; }
   .swiper-slide { height: 274px; border-radius: 12px; }
   .hero-content { left: 40px; bottom: 32px; }
   .hero-content h2 { font-size: 32px; width: 389px; }
@@ -151,18 +144,15 @@
 }
 
 @media (min-width: 1440px) {
-  .hero-heading.tablet { display: none; }
   .hero-heading.desktop { display: block; }
-  .hero-heading-1.desktop { max-width: 392px; font-size: 52px; }
-  .hero-heading-2.desktop { max-width: 392px; font-size: 52px; }
-  .hero-heading-3.desktop { max-width: 561px; font-size: 52px; }
-  .hero-heading-4.desktop { max-width: 561px; font-size: 52px; }
   .swiper-slide { height: 395px; border-radius: 16px; }
   .hero-content { left: 56px; bottom: 56px; gap: 20px; }
   .hero-content h2 { font-size: 52px; width: 561px; }
   .hero-content .btn { width: 227px; height: 40px; font-size: 16px; line-height: 40px; }
   .hero-title { width: 1168px; font-size: 52px; }
 }
+
+
 
 
 
