@@ -34,6 +34,8 @@
 
 .books-category-item {
   cursor: pointer;
+  padding: 8px 0;
+
 }
 
 .books-category-item.selected {
@@ -342,6 +344,7 @@
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+
   .books-custom-select,
   .books-selected {
     max-width: 249px;
