@@ -5,7 +5,7 @@ export function showMessage(color, message) {
   const messageData = {
     title: message,
     titleColor: color,
-    position: 'bottomRight',
+    position: 'topRight',
     zindex: 9999,
   };
   return iziToast.show(messageData);
